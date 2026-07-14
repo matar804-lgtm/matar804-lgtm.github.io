@@ -14,7 +14,6 @@
             --accent: #f59e0b;
             --bg: #f8fafc;
             --text: #1e293b;
-            --whatsapp: #25D366;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
@@ -199,14 +198,6 @@
             background: var(--primary-dark); 
             transform: translateY(-2px);
         }
-        .btn-whatsapp {
-            background: var(--whatsapp);
-            color: white;
-        }
-        .btn-whatsapp:hover {
-            background: #128C7E;
-            transform: translateY(-2px);
-        }
         
         /* قسم التواصل */
         .contact-section {
@@ -252,7 +243,6 @@
         .social-link.email { background: #EA4335; }
         .social-link.linkedin { background: #0A66C2; }
         .social-link.twitter { background: #1DA1F2; }
-        .social-link.whatsapp { background: var(--whatsapp); }
         
         /* الفوتر */
         .footer {
@@ -297,8 +287,8 @@
                 <h3>📿 تطبيق Tasbih App</h3>
                 <p>تطبيق إسلامي شامل لمساعدتك على الذكر والدعاء وتنظيم عبادتك اليومية بتصميم عصري وسلس.</p>
                 
-                <!-- ⚠️ استبدل tasbih-screenshot.png باسم صورتك الفعلية بعد الرفع -->
-                <!-- إذا لم تكن لديك صورة بعد، احذف السطر التالي بالكامل -->
+                <!-- ⚠️ صورة التطبيق - ستظهر تلقائياً عندما ترفع صورة باسم tasbih-screenshot.png إلى المستودع -->
+                <!-- إذا لم ترفع صورة بعد، هذا السطر لن يسبب أي مشكلة وسيختفي تلقائياً -->
                 <img src="tasbih-screenshot.png" alt="واجهة تطبيق Tasbih App" class="app-image" onerror="this.style.display='none'">
                 
                 <ul class="features">
@@ -311,20 +301,13 @@
                 </ul>
                 
                 <div class="btn-group">
-                    <!-- ⚠️ استبدل # برابط التحميل الفعلي عند توفره -->
+                    <!-- ⚠️ غيّر # إلى رابط التحميل الفعلي عند توفره -->
                     <a href="#" class="btn btn-primary">
                         <i class="fas fa-download"></i>
                         تحميل التطبيق
                     </a>
-                    <!-- ⚠️ استبدل +962789362900 برقم الواتساب الخاص بك (بالرمز الدولي بدون +) -->
-                    <a href="https://wa.me/+962789362900?text=مرحباً، أريد الاستفسار عن تطبيق Tasbih App" class="btn btn-whatsapp" target="_blank">
-                        <i class="fab fa-whatsapp"></i>
-                        تواصل واتساب
-                    </a>
                 </div>
             </div>
-            
-            <!-- يمكنك نسخ كتلة app-card أعلاه لإضافة تطبيقات مستقبلية -->
         </div>
         
         <!-- قسم التواصل -->
@@ -332,21 +315,13 @@
             <h2>📬 تواصل معنا</h2>
             <p>نسعد بتواصلك معنا للاستفسارات والاقتراحات</p>
             <div class="social-links">
-                <!-- ⚠️ استبدل الروابط التالية بحساباتك الحقيقية -->
+                <!-- رابط حسابك على GitHub -->
                 <a href="https://github.com/matar804-lgtm" class="social-link github" target="_blank" title="GitHub">
                     <i class="fab fa-github"></i>
                 </a>
+                <!-- البريد الإلكتروني -->
                 <a href="mailto:mohammed.matar@appnest.studio" class="social-link email" title="البريد الإلكتروني">
                     <i class="fas fa-envelope"></i>
-                </a>
-                <!-- <a href="#" class="social-link linkedin" target="_blank" title="LinkedIn">
-                    <i class="fab fa-linkedin-in"></i>
-                </a> -->
-                <!-- <a href="#" class="social-link twitter" target="_blank" title="Twitter/X">
-                    <i class="fab fa-x-twitter"></i>
-                </a> -->
-                <a href="https://wa.me/966500000000" class="social-link whatsapp" target="_blank" title="واتساب">
-                    <i class="fab fa-whatsapp"></i>
                 </a>
             </div>
         </div>
