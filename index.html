@@ -1,46 +1,25 @@
-matar804-lgtm
-matar804-lgtm.github.io
-Repository navigation
-Code
-Issues
-Pull requests
-Agents
-Actions
-Projects
-Wiki
-Security and quality
-Insights
-Settings
-Files
-Go to file
-t
-T
-README.md
-index.html
-matar804-lgtm.github.io
-/index.html
-matar804-lgtm
-matar804-lgtm
-إزالة عناصر الواتساب
-9b6cf1f
- · 
-1 minute ago
-matar804-lgtm.github.io
-/index.html
-
-Code
-
-Blame
-336 lines (319 loc) · 11.6 KB
 <!DOCTYPE html> 
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>استوديو AppNest | محمد مطر</title>
     <meta name="description" content="استوديو AppNest لتطوير التطبيقات الإسلامية المفيدة - تطبيق Tasbih App">
+    
+    <!-- وسوم المشاركة الاجتماعية (Open Graph) -->
+    <meta property="og:title" content="استوديو AppNest | محمد مطر">
+    <meta property="og:description" content="نطور تطبيقات إسلامية تجمع بين الفائدة والتصميم العصري - تطبيق Tasbih App">
+    <meta property="og:image" content="https://matar804-lgtm.github.io/social-preview.png">
+    <meta property="og:url" content="https://matar804-lgtm.github.io/">
+    <meta property="og:type" content="website">
+
+    <!-- أيقونة الموقع -->
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- الخطوط والأيقونات -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         :root {
             --primary: #10b981;
@@ -48,20 +27,91 @@ Blame
             --accent: #f59e0b;
             --bg: #f8fafc;
             --text: #1e293b;
+            --card-bg: #ffffff;
+            --border-color: #e2e8f0;
+            --nav-bg: rgba(255, 255, 255, 0.95);
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        [data-theme="dark"] {
+            --primary: #34d399;
+            --primary-dark: #10b981;
+            --accent: #fbbf24;
+            --bg: #0f172a;
+            --text: #f1f5f9;
+            --card-bg: #1e293b;
+            --border-color: #334155;
+            --nav-bg: rgba(15, 23, 42, 0.95);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        
         body { 
             font-family: 'Cairo', sans-serif; 
             background: var(--bg); 
             color: var(--text);
             line-height: 1.7;
+            transition: background 0.3s ease, color 0.3s ease;
         }
+
+        /* شريط التنقل العلوي */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: var(--nav-bg);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 15px 0;
+            transition: background 0.3s ease;
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-logo {
+            font-weight: 900;
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--primary); }
         
+        .theme-toggle {
+            background: none;
+            border: 2px solid var(--border-color);
+            color: var(--text);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        .theme-toggle:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
         /* الهيدر */
         .header { 
             background: linear-gradient(135deg, var(--primary), var(--primary-dark)); 
             color: white; 
-            padding: 80px 20px; 
+            padding: 100px 20px 80px; 
             text-align: center; 
             position: relative;
             overflow: hidden;
@@ -100,23 +150,49 @@ Blame
             opacity: 0.85;
         }
         
-        /* الحاوية */
         .container { max-width: 1200px; margin: 0 auto; padding: 50px 20px; }
         
-        /* قسم "عن الاستوديو" */
+        /* قسم "عن الاستوديو" مع الخلفية */
         .about {
             text-align: center;
-            max-width: 700px;
+            max-width: 800px;
             margin: 0 auto 50px;
+            position: relative;
+            z-index: 1;
+            background-image: url('social-preview.png'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 60px 30px;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+        .about::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(255, 255, 255, 0.92);
+            z-index: -1;
+            border-radius: 25px;
+        }
+        [data-theme="dark"] .about::before {
+            background: rgba(15, 23, 42, 0.92);
         }
         .about h2 {
             color: var(--primary-dark);
             font-size: 2rem;
             margin-bottom: 15px;
         }
+        [data-theme="dark"] .about h2 {
+            color: var(--primary);
+        }
         .about p {
             font-size: 1.1rem;
             color: #475569;
+        }
+        [data-theme="dark"] .about p {
+            color: #94a3b8;
         }
         
         /* شبكة التطبيقات */
@@ -127,7 +203,7 @@ Blame
             margin-bottom: 50px;
         }
         .app-card { 
-            background: white; 
+            background: var(--card-bg); 
             border-radius: 20px; 
             padding: 30px; 
             box-shadow: 0 4px 20px rgba(0,0,0,0.08); 
@@ -155,12 +231,17 @@ Blame
             font-size: 1.5rem;
             margin-bottom: 10px;
         }
+        [data-theme="dark"] .app-card h3 {
+            color: var(--primary);
+        }
         .app-card > p {
             color: #64748b;
             margin-bottom: 20px;
         }
+        [data-theme="dark"] .app-card > p {
+            color: #94a3b8;
+        }
         
-        /* صورة التطبيق */
         .app-image {
             width: 100%;
             max-width: 280px;
@@ -170,11 +251,8 @@ Blame
             box-shadow: 0 8px 25px rgba(0,0,0,0.15);
             transition: transform 0.3s ease;
         }
-        .app-image:hover {
-            transform: scale(1.03);
-        }
+        .app-image:hover { transform: scale(1.03); }
         
-        /* قائمة الميزات */
         .features { 
             list-style: none; 
             padding: 0; 
@@ -186,6 +264,9 @@ Blame
             position: relative; 
             font-size: 1rem;
             color: #334155;
+        }
+        [data-theme="dark"] .features li {
+            color: #cbd5e1;
         }
         .features li::before {
             content: "✓";
@@ -203,7 +284,6 @@ Blame
             font-weight: bold;
         }
         
-        /* الأزرار */
         .btn-group {
             display: flex;
             gap: 10px;
@@ -232,10 +312,15 @@ Blame
             background: var(--primary-dark); 
             transform: translateY(-2px);
         }
+        .btn-secondary {
+            background: transparent;
+            border: 2px dashed var(--accent);
+            color: var(--accent);
+            cursor: default;
+        }
         
-        /* قسم التواصل */
         .contact-section {
-            background: white;
+            background: var(--card-bg);
             border-radius: 20px;
             padding: 40px 30px;
             text-align: center;
@@ -247,9 +332,15 @@ Blame
             font-size: 1.8rem;
             margin-bottom: 10px;
         }
+        [data-theme="dark"] .contact-section h2 {
+            color: var(--primary);
+        }
         .contact-section p {
             color: #64748b;
             margin-bottom: 25px;
+        }
+        [data-theme="dark"] .contact-section p {
+            color: #94a3b8;
         }
         .social-links {
             display: flex;
@@ -275,32 +366,87 @@ Blame
         }
         .social-link.github { background: #24292e; }
         .social-link.email { background: #EA4335; }
-        .social-link.linkedin { background: #0A66C2; }
-        .social-link.twitter { background: #1DA1F2; }
         
-        /* الفوتر */
         .footer {
             text-align: center;
             padding: 30px 20px;
             color: #64748b;
             font-size: 0.95rem;
-            border-top: 2px solid #e2e8f0;
-            background: white;
+            border-top: 2px solid var(--border-color);
+            background: var(--card-bg);
         }
-        .footer strong {
-            color: var(--primary-dark);
+        .footer strong { color: var(--primary-dark); }
+        [data-theme="dark"] .footer strong { color: var(--primary); }
+        
+        /* زر العودة للأعلى */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        .back-to-top:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+
+        /* حركات الظهور عند التمرير */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         
-        /* التجاوب مع الشاشات الصغيرة */
         @media (max-width: 600px) {
             .header h1 { font-size: 2rem; }
             .header p { font-size: 1.1rem; }
             .about h2 { font-size: 1.5rem; }
+            .about { padding: 40px 20px; }
             .btn { width: 100%; }
+            .nav-links { display: none; } /* يمكن إضافة قائمة همبرغر لاحقاً إذا لزم الأمر */
         }
     </style>
 </head>
 <body>
+
+    <!-- شريط التنقل العلوي -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">استوديو AppNest</div>
+            <div class="nav-links">
+                <a href="#about">عن الاستوديو</a>
+                <a href="#apps">التطبيقات</a>
+                <a href="#contact">تواصل معنا</a>
+            </div>
+            <button class="theme-toggle" id="theme-toggle" title="تبديل الوضع الليلي">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+
     <!-- الهيدر -->
     <div class="header">
         <h1>🚀 استوديو AppNest</h1>
@@ -310,20 +456,18 @@ Blame
     
     <div class="container">
         <!-- قسم عن الاستوديو -->
-        <div class="about">
+        <div id="about" class="about fade-in-up">
             <h2>✨ مرحباً بك في استوديو AppNest</h2>
             <p>نطور تطبيقات إسلامية تجمع بين الفائدة والتصميم العصري، لمساعدتك في عبادتك اليومية وتقريبك من الله.</p>
         </div>
         
         <!-- بطاقة التطبيق -->
-        <div class="apps">
-            <div class="app-card">
+        <div id="apps" class="apps">
+            <div class="app-card fade-in-up">
                 <h3>📿 تطبيق Tasbih App</h3>
                 <p>تطبيق إسلامي شامل لمساعدتك على الذكر والدعاء وتنظيم عبادتك اليومية بتصميم عصري وسلس.</p>
                 
-                <!-- ⚠️ صورة التطبيق - ستظهر تلقائياً عندما ترفع صورة باسم tasbih-screenshot.png إلى المستودع -->
-                <!-- إذا لم ترفع صورة بعد، هذا السطر لن يسبب أي مشكلة وسيختفي تلقائياً -->
-                <img src="tasbih-screenshot.png" alt="واجهة تطبيق Tasbih App" class="app-image" onerror="this.style.display='none'">
+                <img src="tasbih-screenshot.png" alt="واجهة تطبيق Tasbih App" class="app-image" loading="lazy" onerror="this.style.display='none'">
                 
                 <ul class="features">
                     <li>عداد تسبيح ذكي وسهل الاستخدام</li>
@@ -335,25 +479,22 @@ Blame
                 </ul>
                 
                 <div class="btn-group">
-                    <!-- ⚠️ غيّر # إلى رابط التحميل الفعلي عند توفره -->
-                    <a href="#" class="btn btn-primary">
-                        <i class="fas fa-download"></i>
-                        تحميل التطبيق
+                    <a href="#" class="btn btn-secondary">
+                        <i class="fas fa-clock"></i>
+                        قريباً على المتاجر
                     </a>
                 </div>
             </div>
         </div>
         
         <!-- قسم التواصل -->
-        <div class="contact-section">
+        <div id="contact" class="contact-section fade-in-up">
             <h2>📬 تواصل معنا</h2>
             <p>نسعد بتواصلك معنا للاستفسارات والاقتراحات</p>
             <div class="social-links">
-                <!-- رابط حسابك على GitHub -->
                 <a href="https://github.com/matar804-lgtm" class="social-link github" target="_blank" title="GitHub">
                     <i class="fab fa-github"></i>
                 </a>
-                <!-- البريد الإلكتروني -->
                 <a href="mailto:mohammed.matar@appnest.studio" class="social-link email" title="البريد الإلكتروني">
                     <i class="fas fa-envelope"></i>
                 </a>
@@ -366,5 +507,78 @@ Blame
         <p>© 2026 <strong>استوديو AppNest</strong>. جميع الحقوق محفوظة.</p>
         <p>📧 mohammed.matar@appnest.studio</p>
     </div>
+
+    <!-- زر العودة للأعلى -->
+    <button class="back-to-top" id="backToTop" title="العودة للأعلى">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript للوظائف التفاعلية -->
+    <script>
+        // 1. الوضع الليلي (Dark Mode)
+        const themeToggle = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement;
+        const icon = themeToggle.querySelector('i');
+
+        // التحقق من التفضيل المحفوظ
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        htmlElement.setAttribute('data-theme', savedTheme);
+        updateIcon(savedTheme);
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            htmlElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateIcon(newTheme);
+        });
+
+        function updateIcon(theme) {
+            if (theme === 'dark') {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
+        }
+
+        // 2. حركات الظهور عند التمرير (Scroll Animations)
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            observer.observe(el);
+        });
+
+        // 3. زر العودة للأعلى
+        const backToTopBtn = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
 </body>
 </html>
