@@ -20,7 +20,6 @@
     <meta property="og:description" content="اكتشف تطبيقاتنا: تسبيح ذكي، مصحف بتلاوات، وتقويم هجري دقيق. تطوير محمد مطر.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://matar804-lgtm.github.io/">
-    <!-- تم ربط الصورة بملفك الموجود في المستودع -->
     <meta property="og:image" content="https://matar804-lgtm.github.io/social-preview.png">
 
     <!-- أيقونة الموقع -->
@@ -87,7 +86,6 @@
         }
         .theme-toggle:hover { border-color: var(--primary); color: var(--primary); transform: rotate(15deg); }
 
-        /* تحسين الهيدر ليصبح أكثر حيوية */
         .header { 
             background: linear-gradient(-45deg, var(--primary), var(--primary-dark), #059669, #047857);
             background-size: 400% 400%;
@@ -123,7 +121,7 @@
         .about p { font-size: 1.1rem; color: #64748b; }
         [data-theme="dark"] .about p { color: #94a3b8; }
 
-        /* قسم الفيديو الاحترافي (بديل مربع الخطأ) */
+        /* قسم الفيديو الاحترافي */
         .video-section {
             max-width: 800px; margin: 0 auto 60px;
             background: var(--card-bg); padding: 40px 20px; border-radius: 25px;
@@ -137,26 +135,22 @@
         .video-section h2 { color: var(--primary-dark); margin-bottom: 25px; font-size: 1.8rem; }
         [data-theme="dark"] .video-section h2 { color: var(--primary); }
         
-        .video-placeholder {
-            background: linear-gradient(135deg, rgba(16, 185, 129, 0.05), rgba(245, 158, 11, 0.05));
-            border-radius: 20px; padding: 60px 20px; color: var(--text);
-            border: 2px dashed var(--border-color); transition: all 0.3s ease;
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* نسبة 16:9 لضمان تجاوب الفيديو */
+            height: 0;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
         }
-        .video-placeholder:hover {
-            border-color: var(--primary); transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.1);
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
         }
-        .video-placeholder i { 
-            font-size: 4rem; margin-bottom: 20px; color: var(--primary); 
-            animation: pulse 2s infinite;
-        }
-        @keyframes pulse {
-            0% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.1); opacity: 0.8; }
-            100% { transform: scale(1); opacity: 1; }
-        }
-        .video-placeholder h3 { font-size: 1.5rem; margin-bottom: 10px; color: var(--primary-dark); }
-        [data-theme="dark"] .video-placeholder h3 { color: var(--primary); }
 
         .apps { 
             display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
@@ -286,21 +280,17 @@
             <p>نطور تطبيقات إسلامية تجمع بين الفائدة والتصميم العصري، لمساعدتك في عبادتك اليومية وتقريبك من الله بتجربة مستخدم سلسة وممتعة.</p>
         </div>
 
-        <!-- قسم الفيديو الاحترافي (بديل مربع الخطأ) -->
+        <!-- قسم الفيديو التعريفي (يوتيوب) -->
         <div id="video" class="video-section fade-in-up">
             <h2>🎬 الفيديو التعريفي لتطبيقاتنا</h2>
-            <div class="video-placeholder">
-                <i class="fas fa-play-circle"></i>
-                <h3>قريباً جداً</h3>
-                <p>نعمل حالياً على إنهاء الفيديو التعريفي الشامل للتطبيقات بجودة عالية</p>
+            <div class="video-wrapper">
+                <iframe 
+                    src="https://www.youtube.com/embed/UNDKagUowpw?rel=0&modestbranding=1" 
+                    title="فيديو تعريفي لاستوديو AppNest" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
             </div>
-            
-            <!-- ملاحظة لك: عندما تجهز الفيديو، احذف الـ div أعلاه (video-placeholder) 
-                 واستبدله بهذا السطر بعد وضع معرف الفيديو مكان VIDEO_ID:
-                 <div class="video-wrapper">
-                     <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="فيديو تعريفي" allowfullscreen></iframe>
-                 </div> 
-            -->
         </div>
         
         <div id="apps" class="apps">
@@ -349,7 +339,6 @@
             <div class="app-card fade-in-up">
                 <h3>📖 مصحف AppNest</h3>
                 <p>القرآن الكريم بين يديك، في أي وقت وأي مكان.</p>
-                <!-- ⚠️ تم التصحيح هنا: jpeg بدلاً من png ليتطابق مع ملفك في GitHub -->
                 <img src="screenshot3.jpeg" alt="واجهة مصحف AppNest" class="app-image" loading="lazy">
                 <ul class="features">
                     <li>قراءة بخطوط عربية أصيلة وواضحة</li>
@@ -375,7 +364,6 @@
                 <a href="mailto:mohammed.matar@appnest.studio" class="social-link email" title="البريد الإلكتروني">
                     <i class="fas fa-envelope"></i>
                 </a>
-                <!-- تم إخفاء الروابط الوهمية لتجنب أخطاء 404. يمكنك إزالتها من التعليق لاحقاً -->
             </div>
         </div>
     </div>
