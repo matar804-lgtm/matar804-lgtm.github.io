@@ -20,7 +20,7 @@
     <meta property="og:description" content="اكتشف تطبيقاتنا: تسبيح ذكي، مصحف بتلاوات، وتقويم هجري دقيق. تطوير محمد مطر.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://matar804-lgtm.github.io/">
-    <meta property="og:image" content="https://cdn-icons-png.flaticon.com/512/2884/2884684.png">
+    <meta property="og:image" content="https://matar804-lgtm.github.io/social-preview.png">
 
     <!-- أيقونة الموقع -->
     <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/2884/2884684.png">
@@ -114,22 +114,22 @@
         .about p { font-size: 1.1rem; color: #64748b; }
         [data-theme="dark"] .about p { color: #94a3b8; }
 
-        /* قسم الفيديو الجديد */
+        /* قسم الفيديو (حالة الانتظار) */
         .video-section {
             max-width: 800px; margin: 0 auto 60px;
-            background: var(--card-bg); padding: 20px; border-radius: 20px;
+            background: var(--card-bg); padding: 40px 20px; border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.08); border: 1px solid var(--border-color);
             text-align: center;
         }
         .video-section h2 { color: var(--primary-dark); margin-bottom: 20px; font-size: 1.8rem; }
         [data-theme="dark"] .video-section h2 { color: var(--primary); }
-        .video-wrapper {
-            position: relative; padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-            height: 0; overflow: hidden; border-radius: 15px;
+        .video-placeholder {
+            background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+            border-radius: 15px; padding: 60px 20px; color: #64748b;
+            border: 2px dashed #cbd5e1;
         }
-        .video-wrapper iframe {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;
-        }
+        [data-theme="dark"] .video-placeholder { background: linear-gradient(135deg, #1e293b, #0f172a); border-color: #334155; color: #94a3b8; }
+        .video-placeholder i { font-size: 3rem; margin-bottom: 15px; color: var(--primary); }
         
         .apps { 
             display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
@@ -193,7 +193,6 @@
         .social-link.youtube { background: #FF0000; }
         .social-link.twitter { background: #1DA1F2; }
         .social-link.instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
-        .social-link.tiktok { background: #000000; }
         
         .footer {
             text-align: center; padding: 30px 20px; color: #64748b; font-size: 0.95rem;
@@ -235,7 +234,7 @@
             <div class="nav-logo"><i class="fas fa-cube"></i> استوديو AppNest</div>
             <div class="nav-links">
                 <a href="#about">عن الاستوديو</a>
-                <a href="#video">الفيديو التعريفي</a>
+                <a href="#video">الفيديو</a>
                 <a href="#apps">التطبيقات</a>
                 <a href="#contact">تواصل معنا</a>
             </div>
@@ -257,12 +256,13 @@
             <p>نطور تطبيقات إسلامية تجمع بين الفائدة والتصميم العصري، لمساعدتك في عبادتك اليومية وتقريبك من الله بتجربة مستخدم سلسة وممتعة.</p>
         </div>
 
-        <!-- قسم الفيديو التعريفي الجديد -->
+        <!-- قسم الفيديو التعريفي (حالة الانتظار) -->
         <div id="video" class="video-section fade-in-up">
-            <h2>🎬 شاهد الفيديو التعريفي لتطبيقاتنا</h2>
-            <div class="video-wrapper">
-                <!-- استبدل VIDEO_ID_HERE بمعرف الفيديو الخاص بك من يوتيوب -->
-                <iframe src="https://www.youtube.com/embed/VIDEO_ID_HERE" title="فيديو تعريفي لاستوديو AppNest" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <h2>🎬 الفيديو التعريفي لتطبيقاتنا</h2>
+            <div class="video-placeholder">
+                <i class="fas fa-video"></i>
+                <h3>قريباً جداً</h3>
+                <p>نعمل حالياً على إنهاء الفيديو التعريفي الشامل للتطبيقات</p>
             </div>
         </div>
         
@@ -312,7 +312,8 @@
             <div class="app-card fade-in-up">
                 <h3>📖 مصحف AppNest</h3>
                 <p>القرآن الكريم بين يديك، في أي وقت وأي مكان.</p>
-                <img src="screenshot3.png" alt="واجهة مصحف AppNest" class="app-image" loading="lazy">
+                <!-- تم التصحيح هنا: jpeg بدلاً من png ليتطابق مع ملفك -->
+                <img src="screenshot3.jpeg" alt="واجهة مصحف AppNest" class="app-image" loading="lazy">
                 <ul class="features">
                     <li>قراءة بخطوط عربية أصيلة وواضحة</li>
                     <li>تلاوات صوتية لعديد من القراء المشهورين</li>
@@ -329,26 +330,20 @@
         
         <div id="contact" class="contact-section fade-in-up">
             <h2>📬 تواصل معنا وتابع جديدنا</h2>
-            <p>نسعد بتواصلك معنا للاستفسارات والاقتراحات، وتابعنا على منصات التواصل</p>
+            <p>نسعد بتواصلك معنا للاستفسارات والاقتراحات</p>
             <div class="social-links">
                 <a href="https://github.com/matar804-lgtm" class="social-link github" target="_blank" title="GitHub">
                     <i class="fab fa-github"></i>
                 </a>
-                <a href="https://youtube.com/@YOUR_CHANNEL" class="social-link youtube" target="_blank" title="YouTube">
-                    <i class="fab fa-youtube"></i>
-                </a>
-                <a href="https://twitter.com/YOUR_ACCOUNT" class="social-link twitter" target="_blank" title="Twitter / X">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="https://instagram.com/YOUR_ACCOUNT" class="social-link instagram" target="_blank" title="Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://tiktok.com/@YOUR_ACCOUNT" class="social-link tiktok" target="_blank" title="TikTok">
-                    <i class="fab fa-tiktok"></i>
-                </a>
                 <a href="mailto:mohammed.matar@appnest.studio" class="social-link email" title="البريد الإلكتروني">
                     <i class="fas fa-envelope"></i>
                 </a>
+                <!-- يمكنك تفعيل هذه الروابط لاحقاً بوضع روابط حساباتك الحقيقية بدلاً من # -->
+                <!--
+                <a href="#" class="social-link youtube" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="social-link twitter" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link instagram" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                -->
             </div>
         </div>
     </div>
