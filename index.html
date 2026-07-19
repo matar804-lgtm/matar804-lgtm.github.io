@@ -20,6 +20,7 @@
     <meta property="og:description" content="اكتشف تطبيقاتنا: تسبيح ذكي، مصحف بتلاوات، وتقويم هجري دقيق. تطوير محمد مطر.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://matar804-lgtm.github.io/">
+    <!-- تم ربط الصورة بملفك الموجود في المستودع -->
     <meta property="og:image" content="https://matar804-lgtm.github.io/social-preview.png">
 
     <!-- أيقونة الموقع -->
@@ -84,12 +85,20 @@
             width: 40px; height: 40px; border-radius: 50%; cursor: pointer;
             display: flex; align-items: center; justify-content: center; transition: all 0.3s;
         }
-        .theme-toggle:hover { border-color: var(--primary); color: var(--primary); }
+        .theme-toggle:hover { border-color: var(--primary); color: var(--primary); transform: rotate(15deg); }
 
+        /* تحسين الهيدر ليصبح أكثر حيوية */
         .header { 
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark)); 
+            background: linear-gradient(-45deg, var(--primary), var(--primary-dark), #059669, #047857);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
             color: white; padding: 100px 20px 80px; text-align: center; 
             position: relative; overflow: hidden;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
         .header::before {
             content: ""; position: absolute; top: -50%; right: -50%; width: 200%; height: 200%;
@@ -98,7 +107,7 @@
         }
         @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
         
-        .header h1 { margin: 0; font-size: 3rem; font-weight: 900; position: relative; z-index: 1; }
+        .header h1 { margin: 0; font-size: 3rem; font-weight: 900; position: relative; z-index: 1; text-shadow: 0 4px 10px rgba(0,0,0,0.2); }
         .header p { margin-top: 15px; font-size: 1.3rem; opacity: 0.95; position: relative; z-index: 1; }
         .header .subtitle { font-size: 1rem; margin-top: 10px; opacity: 0.85; }
         
@@ -114,33 +123,56 @@
         .about p { font-size: 1.1rem; color: #64748b; }
         [data-theme="dark"] .about p { color: #94a3b8; }
 
-        /* قسم الفيديو (حالة الانتظار) */
+        /* قسم الفيديو الاحترافي (بديل مربع الخطأ) */
         .video-section {
             max-width: 800px; margin: 0 auto 60px;
-            background: var(--card-bg); padding: 40px 20px; border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08); border: 1px solid var(--border-color);
-            text-align: center;
+            background: var(--card-bg); padding: 40px 20px; border-radius: 25px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08); border: 1px solid var(--border-color);
+            text-align: center; position: relative; overflow: hidden;
         }
-        .video-section h2 { color: var(--primary-dark); margin-bottom: 20px; font-size: 1.8rem; }
+        .video-section::before {
+            content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+        .video-section h2 { color: var(--primary-dark); margin-bottom: 25px; font-size: 1.8rem; }
         [data-theme="dark"] .video-section h2 { color: var(--primary); }
-        .video-placeholder {
-            background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
-            border-radius: 15px; padding: 60px 20px; color: #64748b;
-            border: 2px dashed #cbd5e1;
-        }
-        [data-theme="dark"] .video-placeholder { background: linear-gradient(135deg, #1e293b, #0f172a); border-color: #334155; color: #94a3b8; }
-        .video-placeholder i { font-size: 3rem; margin-bottom: 15px; color: var(--primary); }
         
+        .video-placeholder {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.05), rgba(245, 158, 11, 0.05));
+            border-radius: 20px; padding: 60px 20px; color: var(--text);
+            border: 2px dashed var(--border-color); transition: all 0.3s ease;
+        }
+        .video-placeholder:hover {
+            border-color: var(--primary); transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.1);
+        }
+        .video-placeholder i { 
+            font-size: 4rem; margin-bottom: 20px; color: var(--primary); 
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .video-placeholder h3 { font-size: 1.5rem; margin-bottom: 10px; color: var(--primary-dark); }
+        [data-theme="dark"] .video-placeholder h3 { color: var(--primary); }
+
         .apps { 
             display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
             gap: 30px; margin-bottom: 50px;
         }
         .app-card { 
             background: var(--card-bg); border-radius: 20px; padding: 30px; 
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08); transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             border-top: 5px solid var(--primary); border: 1px solid var(--border-color);
+            position: relative; overflow: hidden;
         }
-        .app-card:hover { transform: translateY(-8px); box-shadow: 0 12px 40px rgba(0,0,0,0.15); }
+        .app-card:hover { 
+            transform: translateY(-10px); 
+            box-shadow: 0 20px 40px rgba(16, 185, 129, 0.15); 
+            border-color: var(--primary);
+        }
         .app-card h3 { margin-top: 0; color: var(--primary-dark); font-size: 1.5rem; margin-bottom: 10px; }
         [data-theme="dark"] .app-card h3 { color: var(--primary); }
         .app-card > p { color: #64748b; margin-bottom: 20px; }
@@ -148,54 +180,52 @@
         
         .app-image {
             width: 100%; max-width: 280px; border-radius: 15px; margin: 20px auto;
-            display: block; box-shadow: 0 8px 25px rgba(0,0,0,0.15); transition: transform 0.3s ease;
+            display: block; box-shadow: 0 8px 25px rgba(0,0,0,0.1); transition: transform 0.4s ease;
             background: #e2e8f0; min-height: 200px; object-fit: cover;
         }
-        .app-image:hover { transform: scale(1.03); }
+        .app-card:hover .app-image { transform: scale(1.05) rotate(1deg); }
         
         .features { list-style: none; padding: 0; margin: 20px 0; }
-        .features li { margin-bottom: 10px; padding-right: 30px; position: relative; font-size: 1rem; color: #334155; }
+        .features li { margin-bottom: 12px; padding-right: 35px; position: relative; font-size: 1rem; color: #334155; }
         [data-theme="dark"] .features li { color: #cbd5e1; }
         .features li::before {
-            content: "✓"; position: absolute; right: 0; color: white; background: var(--primary);
-            width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center;
-            justify-content: center; font-size: 0.8rem; font-weight: bold;
+            content: "✓"; position: absolute; right: 0; top: 2px; color: white; background: var(--primary);
+            width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center;
+            justify-content: center; font-size: 0.8rem; font-weight: bold; box-shadow: 0 2px 5px rgba(16, 185, 129, 0.3);
         }
         
-        .btn-group { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px; }
+        .btn-group { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 25px; }
         .btn { 
             display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-            padding: 12px 24px; border-radius: 10px; text-decoration: none; font-weight: 700;
+            padding: 12px 24px; border-radius: 12px; text-decoration: none; font-weight: 700;
             transition: all 0.3s ease; font-size: 1rem; flex: 1; min-width: 150px;
         }
-        .btn-primary { background: var(--primary); color: white; }
-        .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); }
+        .btn-primary { background: var(--primary); color: white; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3); }
+        .btn-primary:hover { background: var(--primary-dark); transform: translateY(-3px); box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4); }
         .btn-secondary { background: transparent; border: 2px dashed var(--accent); color: var(--accent); cursor: default; }
+        .btn-secondary:hover { background: rgba(245, 158, 11, 0.1); }
         
         .contact-section {
-            background: var(--card-bg); border-radius: 20px; padding: 40px 30px; text-align: center;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08); margin-bottom: 40px; border: 1px solid var(--border-color);
+            background: var(--card-bg); border-radius: 25px; padding: 50px 30px; text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-bottom: 40px; border: 1px solid var(--border-color);
         }
         .contact-section h2 { color: var(--primary-dark); font-size: 1.8rem; margin-bottom: 10px; }
         [data-theme="dark"] .contact-section h2 { color: var(--primary); }
-        .contact-section p { color: #64748b; margin-bottom: 25px; }
+        .contact-section p { color: #64748b; margin-bottom: 30px; }
         [data-theme="dark"] .contact-section p { color: #94a3b8; }
         
         .social-links { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
         .social-link {
             display: inline-flex; align-items: center; justify-content: center;
-            width: 50px; height: 50px; border-radius: 50%; color: white; font-size: 1.3rem;
+            width: 55px; height: 55px; border-radius: 50%; color: white; font-size: 1.4rem;
             text-decoration: none; transition: all 0.3s ease;
         }
-        .social-link:hover { transform: translateY(-5px) scale(1.1); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
+        .social-link:hover { transform: translateY(-8px) scale(1.1); box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
         .social-link.github { background: #24292e; }
         .social-link.email { background: #EA4335; }
-        .social-link.youtube { background: #FF0000; }
-        .social-link.twitter { background: #1DA1F2; }
-        .social-link.instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
         
         .footer {
-            text-align: center; padding: 30px 20px; color: #64748b; font-size: 0.95rem;
+            text-align: center; padding: 40px 20px; color: #64748b; font-size: 0.95rem;
             border-top: 2px solid var(--border-color); background: var(--card-bg);
         }
         .footer strong { color: var(--primary-dark); }
@@ -209,11 +239,11 @@
             opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 999;
         }
         .back-to-top.visible { opacity: 1; visibility: visible; }
-        .back-to-top:hover { background: var(--primary-dark); transform: translateY(-3px); }
+        .back-to-top:hover { background: var(--primary-dark); transform: translateY(-5px); }
 
         .fade-in-up {
-            opacity: 0; transform: translateY(30px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            opacity: 0; transform: translateY(40px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
         .fade-in-up.visible { opacity: 1; transform: translateY(0); }
         
@@ -256,14 +286,21 @@
             <p>نطور تطبيقات إسلامية تجمع بين الفائدة والتصميم العصري، لمساعدتك في عبادتك اليومية وتقريبك من الله بتجربة مستخدم سلسة وممتعة.</p>
         </div>
 
-        <!-- قسم الفيديو التعريفي (حالة الانتظار) -->
+        <!-- قسم الفيديو الاحترافي (بديل مربع الخطأ) -->
         <div id="video" class="video-section fade-in-up">
             <h2>🎬 الفيديو التعريفي لتطبيقاتنا</h2>
             <div class="video-placeholder">
-                <i class="fas fa-video"></i>
+                <i class="fas fa-play-circle"></i>
                 <h3>قريباً جداً</h3>
-                <p>نعمل حالياً على إنهاء الفيديو التعريفي الشامل للتطبيقات</p>
+                <p>نعمل حالياً على إنهاء الفيديو التعريفي الشامل للتطبيقات بجودة عالية</p>
             </div>
+            
+            <!-- ملاحظة لك: عندما تجهز الفيديو، احذف الـ div أعلاه (video-placeholder) 
+                 واستبدله بهذا السطر بعد وضع معرف الفيديو مكان VIDEO_ID:
+                 <div class="video-wrapper">
+                     <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="فيديو تعريفي" allowfullscreen></iframe>
+                 </div> 
+            -->
         </div>
         
         <div id="apps" class="apps">
@@ -312,7 +349,7 @@
             <div class="app-card fade-in-up">
                 <h3>📖 مصحف AppNest</h3>
                 <p>القرآن الكريم بين يديك، في أي وقت وأي مكان.</p>
-                <!-- تم التصحيح هنا: jpeg بدلاً من png ليتطابق مع ملفك -->
+                <!-- ⚠️ تم التصحيح هنا: jpeg بدلاً من png ليتطابق مع ملفك في GitHub -->
                 <img src="screenshot3.jpeg" alt="واجهة مصحف AppNest" class="app-image" loading="lazy">
                 <ul class="features">
                     <li>قراءة بخطوط عربية أصيلة وواضحة</li>
@@ -338,12 +375,7 @@
                 <a href="mailto:mohammed.matar@appnest.studio" class="social-link email" title="البريد الإلكتروني">
                     <i class="fas fa-envelope"></i>
                 </a>
-                <!-- يمكنك تفعيل هذه الروابط لاحقاً بوضع روابط حساباتك الحقيقية بدلاً من # -->
-                <!--
-                <a href="#" class="social-link youtube" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-                <a href="#" class="social-link twitter" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="social-link instagram" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-                -->
+                <!-- تم إخفاء الروابط الوهمية لتجنب أخطاء 404. يمكنك إزالتها من التعليق لاحقاً -->
             </div>
         </div>
     </div>
