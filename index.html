@@ -16,7 +16,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>استوديو AppNest | محمد مطر - تطبيقات إسلامية عصرية</title>
-    <meta name="description" content="استوديو AppNest لتطوير التطبيقات الإسلامية المفيدة. نقدم تطبيق التسبيح والرزنامة الإسلامية بتصاميم عصرية وتجربة مستخدم فريدة.">
+    <meta name="description" content="استوديو AppNest لتطوير التطبيقات الإسلامية المفيدة. تسبيح، رزنامة، خلفيات، ورفيق السفر المسلم.">
     
     <!-- وسوم PWA والتثبيت -->
     <meta name="theme-color" content="#10b981">
@@ -28,7 +28,7 @@
 
     <!-- وسوم المشاركة الاجتماعية (Open Graph) -->
     <meta property="og:title" content="استوديو AppNest | تطبيقات إسلامية عصرية">
-    <meta property="og:description" content="اكتشف تطبيقاتنا: تسبيح ذكي ورزنامة إسلامية بتصميم عصري. تطوير محمد مطر.">
+    <meta property="og:description" content="اكتشف تطبيقاتنا: تسبيح، رزنامة إسلامية، خلفيات، ورفيق السفر المسلم. تطوير محمد مطر.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://matar804-lgtm.github.io/">
     <meta property="og:image" content="https://cdn-icons-png.flaticon.com/512/2884/2884684.png">
@@ -45,6 +45,7 @@
             --primary: #10b981;
             --primary-dark: #065f46;
             --accent: #f59e0b;
+            --secondary: #8b5cf6;
             --bg: #f8fafc;
             --text: #1e293b;
             --card-bg: #ffffff;
@@ -56,6 +57,7 @@
             --primary: #34d399;
             --primary-dark: #10b981;
             --accent: #fbbf24;
+            --secondary: #a78bfa;
             --bg: #0f172a;
             --text: #f1f5f9;
             --card-bg: #1e293b;
@@ -163,7 +165,7 @@
         }
 
         .apps { 
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
             gap: 30px; margin-bottom: 50px;
         }
         .app-card { 
@@ -177,10 +179,24 @@
             box-shadow: 0 20px 40px rgba(16, 185, 129, 0.15); 
             border-color: var(--primary);
         }
+        .app-card:nth-child(2) { border-top-color: var(--secondary); }
+        .app-card:nth-child(2):hover { box-shadow: 0 20px 40px rgba(139, 92, 246, 0.15); border-color: var(--secondary); }
+        .app-card:nth-child(3) { border-top-color: var(--accent); }
+        .app-card:nth-child(3):hover { box-shadow: 0 20px 40px rgba(245, 158, 11, 0.15); border-color: var(--accent); }
+        .app-card:nth-child(4) { border-top-color: #ec4899; }
+        .app-card:nth-child(4):hover { box-shadow: 0 20px 40px rgba(236, 72, 153, 0.15); border-color: #ec4899; }
+
         .app-card h3 { margin-top: 0; color: var(--primary-dark); font-size: 1.5rem; margin-bottom: 5px; }
         [data-theme="dark"] .app-card h3 { color: var(--primary); }
         .app-card > p { color: #64748b; margin-bottom: 15px; font-size: 0.95rem; }
         [data-theme="dark"] .app-card > p { color: #94a3b8; }
+        
+        .app-icon {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            display: block;
+            text-align: center;
+        }
         
         .app-image {
             width: 100%; max-width: 280px; border-radius: 15px; margin: 15px auto 25px;
@@ -210,12 +226,6 @@
         .btn-secondary:hover { background: rgba(245, 158, 11, 0.1); }
 
         .app-card.coming-soon {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            min-height: 350px;
             border-top-color: var(--accent);
         }
         .coming-soon-badge {
@@ -226,6 +236,7 @@
             font-size: 0.9rem;
             font-weight: bold;
             margin-bottom: 15px;
+            display: inline-block;
         }
         
         .contact-section {
@@ -324,10 +335,11 @@
             
             <!-- التطبيق 1: التسبيح -->
             <div class="app-card fade-in-up">
-                <h3>📿 تطبيق التسبيح</h3>
+                <span class="app-icon">📿</span>
+                <h3>تطبيق التسبيح</h3>
                 <p>تطبيق إسلامي شامل لمساعدتك على الذكر والدعاء وتنظيم عبادتك اليومية.</p>
                 
-                <img src="screenshot1.png" alt="واجهة تطبيق التسبيح" class="app-image" loading="lazy">
+                <img src="screenshot1.png" alt="واجهة تطبيق التسبيح" class="app-image" loading="lazy" onerror="this.style.display='none'">
                 
                 <ul class="features">
                     <li>عداد تسبيح ذكي وسهل الاستخدام</li>
@@ -347,27 +359,87 @@
                 </div>
             </div>
 
-            <!-- التطبيق 2: الرزنامة الإسلامية (بدل المصحف) -->
-            <div class="app-card fade-in-up">
-                <h3>🗓️ الرزنامة الإسلامية</h3>
-                <p>رفيقك اليومي على الهاتف والكمبيوتر لمواقيت الصلاة، المناسبات الإسلامية، والتقويم الهجري بتصميم عصري يجمع بين الأصالة والمعاصرة.</p>
+            <!-- التطبيق 2: الرزنامة الإسلامية -->
+            <div class="app-card coming-soon fade-in-up">
+                <span class="coming-soon-badge">قريباً</span>
+                <span class="app-icon">📅</span>
+                <h3>رزنامة AppNest</h3>
+                <p>تقويمك الإسلامي الذكي الذي يجمع بين الأصالة والمعاصرة. رفيقك اليومي لمعرفة المناسبات الإسلامية.</p>
                 
-                <img src="screenshot2.png" alt="واجهة الرزنامة الإسلامية" class="app-image" loading="lazy">
+                <img src="calendar1.png" alt="رزنامة AppNest - صورة 1" class="app-image" loading="lazy" onerror="this.style.display='none'">
+                <img src="calendar2.png" alt="رزنامة AppNest - صورة 2" class="app-image" loading="lazy" onerror="this.style.display='none'">
+                <img src="calendar3.png" alt="رزنامة AppNest - صورة 3" class="app-image" loading="lazy" onerror="this.style.display='none'">
                 
                 <ul class="features">
-                    <li>مواقيت الصلاة الدقيقة تلقائياً حسب موقعك الجغرافي</li>
-                    <li>التقويم الهجري والميلادي مع أبرز المناسبات الدينية</li>
-                    <li>إشعارات الأذكار والأدعية اليومية في أوقاتها</li>
-                    <li>عداد تنازلي للإفطار في رمضان والأعياد</li>
-                    <li>واجهة عصرية تدعم الوضع الليلي والنهاري</li>
-                    <li>متاحة كتطبيق موبايل وموقع ويب متكامل</li>
+                    <li>عرض متزامن للتقويم الهجري والميلادي بلمسة عصرية</li>
+                    <li>تنبيهات تلقائية لجميع المناسبات الإسلامية</li>
+                    <li>تمييز الأشهر الحرم والأيام الفاضلة بصرياً</li>
+                    <li>واجهة هادئة وأنيقة تدعم الوضع الليلي</li>
+                    <li>تجربة موحدة على الويب والموبايل</li>
+                    <li>إضافة ملاحظاتك الشخصية وربطها بالمناسبات</li>
                 </ul>
-                <div class="btn-group">
+                <div class="btn-group" style="justify-content: center;">
                     <a href="https://github.com/matar804-lgtm" target="_blank" class="btn btn-primary">
-                        <i class="fab fa-github"></i> زيارة المستودع
+                        <i class="fab fa-github"></i> متابعة التطوير
                     </a>
                     <a href="#" class="btn btn-secondary">
-                        <i class="fas fa-clock"></i> قيد التطوير
+                        <i class="fas fa-tools"></i> قيد التطوير
+                    </a>
+                </div>
+            </div>
+
+            <!-- التطبيق 3: خلفيات رائعة -->
+            <div class="app-card coming-soon fade-in-up">
+                <span class="coming-soon-badge">قريباً</span>
+                <span class="app-icon">🎨</span>
+                <h3>خلفيات إسلامية رائعة</h3>
+                <p>مجموعة مختارة من الخلفيات الإسلامية العصرية والهادئة لهاتفك وكمبيوترك، تجمع بين الجمال والروحانية.</p>
+                
+                <img src="wallpaper1.png" alt="خلفيات إسلامية - صورة 1" class="app-image" loading="lazy" onerror="this.style.display='none'">
+                <img src="wallpaper2.png" alt="خلفيات إسلامية - صورة 2" class="app-image" loading="lazy" onerror="this.style.display='none'">
+                
+                <ul class="features">
+                    <li>مئات الخلفيات الإسلامية عالية الجودة</li>
+                    <li>تصاميم عصرية تناسب جميع الأذواق</li>
+                    <li>متاحة للهاتف (Android & iOS) والكمبيوتر</li>
+                    <li>تصنيفات متنوعة: آيات، أدعية، مساجد، طبيعة</li>
+                    <li>إمكانية التحميل والمشاركة بسهولة</li>
+                    <li>تحديثات دورية بخلفيات جديدة</li>
+                </ul>
+                <div class="btn-group" style="justify-content: center;">
+                    <a href="https://github.com/matar804-lgtm" target="_blank" class="btn btn-primary">
+                        <i class="fab fa-github"></i> استكشاف المشروع
+                    </a>
+                    <a href="#" class="btn btn-secondary">
+                        <i class="fas fa-tools"></i> قيد التطوير
+                    </a>
+                </div>
+            </div>
+
+            <!-- التطبيق 4: رفيق السفر المسلم -->
+            <div class="app-card coming-soon fade-in-up">
+                <span class="coming-soon-badge">قريباً</span>
+                <span class="app-icon">✈️</span>
+                <h3>رفيق السفر المسلم</h3>
+                <p>دليلك الشامل للسفر، يجمع بين مواقيت الصلاة، اتجاه القبلة، والأذكار الخاصة بالسفر في تطبيق واحد.</p>
+                
+                <img src="travel1.png" alt="رفيق السفر المسلم - صورة 1" class="app-image" loading="lazy" onerror="this.style.display='none'">
+                <img src="travel2.png" alt="رفيق السفر المسلم - صورة 2" class="app-image" loading="lazy" onerror="this.style.display='none'">
+                
+                <ul class="features">
+                    <li>مواقيت الصلاة الدقيقة في أي مكان في العالم</li>
+                    <li>بوصلة القبلة الذكية مع وضع السفر</li>
+                    <li>أذكار السفر والترحال مع التنبيهات</li>
+                    <li>دليل المساجد القريبة والمراكز الإسلامية</li>
+                    <li>وضع الطيران الذكي (Offline Mode)</li>
+                    <li>نصائح وإرشادات للسفر الإسلامي</li>
+                </ul>
+                <div class="btn-group" style="justify-content: center;">
+                    <a href="https://github.com/matar804-lgtm" target="_blank" class="btn btn-primary">
+                        <i class="fab fa-github"></i> متابعة التطوير
+                    </a>
+                    <a href="#" class="btn btn-secondary">
+                        <i class="fas fa-tools"></i> قيد التطوير
                     </a>
                 </div>
             </div>
@@ -379,6 +451,7 @@
             <h2>📬 تواصل معنا وتابع جديدنا</h2>
             <p>نسعد بتواصلك معنا للاستفسارات والاقتراحات</p>
             
+            <!-- تم دمج رابط Formspree الخاص بك هنا مباشرة -->
             <form action="https://formspree.io/f/mrenaaoy" method="POST" style="max-width: 500px; margin: 0 auto; text-align: right;">
                 <div style="margin-bottom: 15px;">
                     <label style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--text);">الاسم:</label>
