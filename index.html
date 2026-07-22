@@ -182,7 +182,6 @@
         .app-card > p { color: #64748b; margin-bottom: 15px; font-size: 0.95rem; }
         [data-theme="dark"] .app-card > p { color: #94a3b8; }
         
-        /* صورة التطبيق تظهر تحت الاسم والوصف مباشرة */
         .app-image {
             width: 100%; max-width: 280px; border-radius: 15px; margin: 15px auto 25px;
             display: block; box-shadow: 0 8px 25px rgba(0,0,0,0.1); transition: transform 0.4s ease;
@@ -210,7 +209,6 @@
         .btn-secondary { background: transparent; border: 2px dashed var(--accent); color: var(--accent); cursor: default; }
         .btn-secondary:hover { background: rgba(245, 158, 11, 0.1); }
 
-        /* تنسيق خاص للبطاقة الفارغة / قيد التطوير */
         .app-card.coming-soon {
             display: flex;
             flex-direction: column;
@@ -246,7 +244,6 @@
             text-decoration: none; transition: all 0.3s ease;
         }
         .social-link:hover { transform: translateY(-8px) scale(1.1); box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
-        .social-link.github { background: #24292e; }
         .social-link.email { background: #EA4335; }
         
         .footer {
@@ -325,12 +322,11 @@
         
         <div id="apps" class="apps">
             
-            <!-- التطبيق 1: التسبيح (مكتمل مع الصورة تحت الاسم) -->
+            <!-- التطبيق 1: التسبيح -->
             <div class="app-card fade-in-up">
                 <h3>📿 تطبيق التسبيح</h3>
                 <p>تطبيق إسلامي شامل لمساعدتك على الذكر والدعاء وتنظيم عبادتك اليومية.</p>
                 
-                <!-- الصورة موضوعة هنا تحت الاسم والوصف مباشرة -->
                 <img src="screenshot1.png" alt="واجهة تطبيق التسبيح" class="app-image" loading="lazy">
                 
                 <ul class="features">
@@ -351,7 +347,7 @@
                 </div>
             </div>
 
-            <!-- التطبيق 2: المصحف (فارغ / قيد التطوير كما طلبت) -->
+            <!-- التطبيق 2: المصحف -->
             <div class="app-card coming-soon fade-in-up">
                 <span class="coming-soon-badge">قريباً</span>
                 <h3>📖 مصحف AppNest</h3>
@@ -369,9 +365,7 @@
             <h2>📬 تواصل معنا وتابع جديدنا</h2>
             <p>نسعد بتواصلك معنا للاستفسارات والاقتراحات</p>
             <div class="social-links">
-                <a href="https://github.com/matar804-lgtm" class="social-link github" target="_blank" title="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
+                <!-- تم إزالة رابط GitHub من هنا، وأصبح البريد الإلكتروني هو وسيلة التواصل الوحيدة -->
                 <a href="mailto:mohammed.matar@appnest.studio" class="social-link email" title="البريد الإلكتروني">
                     <i class="fas fa-envelope"></i>
                 </a>
