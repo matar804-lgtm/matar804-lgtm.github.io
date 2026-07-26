@@ -1,62 +1,24 @@
-<<<<<<< HEAD
-﻿{
-  "name": "استوديو AppNest - تطبيقات إسلامية عصرية",
-  "short_name": "AppNest",
-  "description": "تطبيقات إسلامية مفيدة بتصميم عصري",
-  "start_url": "/index.html",
+{
+  "name": "تطبيق تسبيحة",
+  "short_name": "تسبيحة",
+  "description": "تطبيق إسلامي شامل - أذكار، أدعية، قرآن كريم، واتجاه القبلة",
+  "start_url": ".",
   "display": "standalone",
-  "background_color": "#f8fafc",
-  "theme_color": "#10b981",
+  "background_color": "#009688",
+  "theme_color": "#009688",
   "orientation": "portrait",
+  "lang": "ar",
+  "dir": "rtl",
   "icons": [
     {
-      "src": "https://cdn-icons-png.flaticon.com/512/2884/2884684.png",
+      "src": "icons/icon-192.png",
       "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "type": "image/png"
     },
     {
-      "src": "https://cdn-icons-png.flaticon.com/512/2884/2884684.png",
+      "src": "icons/icon-512.png",
       "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "type": "image/png"
     }
   ]
 }
-=======
-{
-    "name": "matar_tasbiha_2026",
-    "short_name": "matar_tasbiha_2026",
-    "start_url": ".",
-    "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
-    "orientation": "portrait-primary",
-    "prefer_related_applications": false,
-    "icons": [
-        {
-            "src": "icons/Icon-192.png",
-            "sizes": "192x192",
-            "type": "image/png"
-        },
-        {
-            "src": "icons/Icon-512.png",
-            "sizes": "512x512",
-            "type": "image/png"
-        },
-        {
-            "src": "icons/Icon-maskable-192.png",
-            "sizes": "192x192",
-            "type": "image/png",
-            "purpose": "maskable"
-        },
-        {
-            "src": "icons/Icon-maskable-512.png",
-            "sizes": "512x512",
-            "type": "image/png",
-            "purpose": "maskable"
-        }
-    ]
-}
->>>>>>> ee37eac42a9c27c74b342eb24370cf89aca05449
