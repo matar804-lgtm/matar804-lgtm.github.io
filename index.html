@@ -1,76 +1,147 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <!-- المتغير المطلوب من Flutter لبناء الويب -->
-  <base href="/">
-
   <meta charset="UTF-8">
-  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
-  
-  <!-- إعدادات PWA (تطبيق الويب التقدمي) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#009688">
-  <meta name="description" content="تطبيق تسبيحة - أذكار، أدعية، قرآن كريم، واتجاه القبلة">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="تسبيحة">
-  
-  <!-- روابط الأيقونات وملف الإعدادات -->
-  <link rel="manifest" href="manifest.json">
-  <link rel="apple-touch-icon" href="icons/icon-192.png">
-  
-  <title>تطبيق تسبيحة</title>
-  
-  <!-- تحميل خط أميري كخط احتياطي -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
-
+  <title>استوديو AppNest - تطبيقات إسلامية</title>
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: #009688;
-      font-family: 'Amiri', serif;
-    }
-    .loading {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      color: white;
-    }
-    .spinner {
-      border: 4px solid rgba(255, 255, 255, 0.3);
-      border-top: 4px solid #ffffff;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      animation: spin 1s linear infinite;
-      margin-bottom: 20px;
-    }
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; color: #333; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    header { text-align: center; color: white; margin-bottom: 40px; padding: 30px 20px; }
+    header h1 { font-size: 2.8em; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+    header p { font-size: 1.2em; opacity: 0.9; }
+    .welcome-section { background: rgba(255,255,255,0.95); border-radius: 20px; padding: 30px; margin-bottom: 40px; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
+    .welcome-section h2 { color: #009688; font-size: 1.8em; margin-bottom: 15px; }
+    .welcome-section p { color: #666; font-size: 1.1em; line-height: 1.8; }
+    .apps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 30px; }
+    .app-card { background: white; border-radius: 25px; padding: 30px; position: relative; box-shadow: 0 10px 40px rgba(0,0,0,0.2); transition: transform 0.3s ease; }
+    .app-card:hover { transform: translateY(-5px); }
+    .app-badge { position: absolute; top: 20px; left: 20px; background: linear-gradient(135deg, #4CAF50, #45a049); color: white; padding: 6px 18px; border-radius: 20px; font-size: 0.85em; font-weight: bold; box-shadow: 0 5px 15px rgba(76,175,80,0.4); }
+    .app-badge.dev { background: linear-gradient(135deg, #ff9800, #f57c00); box-shadow: 0 5px 15px rgba(255,152,0,0.4); }
+    .app-icon { width: 90px; height: 90px; background: linear-gradient(135deg, #009688, #4CAF50); border-radius: 22px; display: flex; align-items: center; justify-content: center; font-size: 3em; color: white; margin: 0 auto 20px; box-shadow: 0 10px 30px rgba(0,150,136,0.3); }
+    .app-card h2 { color: #009688; font-size: 1.6em; margin-bottom: 12px; text-align: center; }
+    .app-card .description { color: #666; line-height: 1.7; margin-bottom: 20px; text-align: center; font-size: 0.95em; }
+    .features-list { list-style: none; margin: 20px 0; }
+    .features-list li { padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #555; display: flex; align-items: center; gap: 10px; font-size: 0.95em; }
+    .features-list li:before { content: "✓"; color: #4CAF50; font-weight: bold; font-size: 1.1em; }
+    .install-btn { display: block; width: 100%; background: linear-gradient(135deg, #4CAF50, #45a049); color: white; padding: 16px; border-radius: 50px; text-align: center; text-decoration: none; font-size: 1.15em; font-weight: bold; border: none; cursor: pointer; box-shadow: 0 10px 30px rgba(76,175,80,0.4); transition: all 0.3s ease; margin-top: 15px; }
+    .install-btn:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(76,175,80,0.6); }
+    .status-badge { display: block; text-align: center; background: #ff9800; color: white; padding: 12px; border-radius: 25px; font-size: 1em; font-weight: bold; margin-top: 15px; }
+    .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); animation: fadeIn 0.3s; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .modal-content { background: white; margin: 15% auto; padding: 35px; border-radius: 25px; max-width: 450px; text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,0.3); animation: slideDown 0.3s; }
+    @keyframes slideDown { from { transform: translateY(-50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    .modal-content h3 { color: #009688; font-size: 1.6em; margin-bottom: 15px; }
+    .modal-content ol { text-align: right; line-height: 1.9; margin: 15px 0; color: #555; padding-right: 20px; }
+    .modal-close { background: #009688; color: white; padding: 12px 35px; border-radius: 25px; border: none; cursor: pointer; font-size: 1em; margin-top: 15px; }
+    footer { text-align: center; color: white; margin-top: 50px; padding: 20px; opacity: 0.8; }
+    @media (max-width: 768px) { .apps-grid { grid-template-columns: 1fr; } header h1 { font-size: 2em; } }
   </style>
 </head>
 <body>
-  <!-- شاشة التحميل التي تظهر قبل تشغيل التطبيق -->
-  <div class="loading" id="loading">
-    <div class="spinner"></div>
-    <p>جاري تحميل تطبيق تسبيحة...</p>
+  <div class="container">
+    <header>
+      <h1>🚀 استوديو AppNest</h1>
+      <p>تطبيقات إسلامية مفيدة بتصميم عصري وتجربة مستخدم استثنائية</p>
+      <p style="margin-top: 10px; font-size: 0.95em;">تطوير: محمد مطر 🇴</p>
+    </header>
+    <div class="welcome-section">
+      <h2>✨ مرحباً بك في استوديو AppNest</h2>
+      <p>نطور تطبيقات إسلامية تجمع بين الفائدة والتصميم العصري، لمساعدتك في عبادتك اليومية وتقريبك من الله بتجربة مستخدم سلسة، خفيفة، وممتعة.</p>
+    </div>
+    <div class="apps-grid">
+      <div class="app-card">
+        <div class="app-badge">متاح الآن</div>
+        <div class="app-icon"></div>
+        <h2>تطبيق التسبيح</h2>
+        <p class="description">تطبيق إسلامي شامل لمساعدتك على الذكر والدعاء وتنظيم عبادتك اليومية.</p>
+        <ul class="features-list">
+          <li>عداد تسبيح ذكي وسهل الاستخدام</li>
+          <li>مجموعة شاملة من 100 دعاء للأمنيات</li>
+          <li>أذكار الصباح والمساء ومناسبات مختلفة</li>
+          <li>بوصلة قبلة دقيقة وموثوقة</li>
+          <li>خلفيات إسلامية و 5 تصاميم للمسبحة مع 8 ألوان</li>
+          <li>نظام إنجازات لتحفيزك على الاستمرار</li>
+        </ul>
+        <button class="install-btn" onclick="startInstallation()">📱 تثبيت التطبيق</button>
+      </div>
+      <div class="app-card">
+        <div class="app-badge dev">قيد التطوير</div>
+        <div class="app-icon" style="background: linear-gradient(135deg, #ff9800, #f57c00);">📅</div>
+        <h2>رزنامة AppNest</h2>
+        <p class="description">تقويمك الإسلامي الذكي الذي يجمع بين الأصالة والمعاصرة.</p>
+        <ul class="features-list">
+          <li>عرض متزامن للتقويم الهجري والميلادي</li>
+          <li>تنبيهات تلقائية للمناسبات الإسلامية</li>
+          <li>تمييز الأشهر الحرم والأيام الفاضلة</li>
+          <li>واجهة هادئة وأنيقة تدعم الوضع الليلي</li>
+        </ul>
+        <div class="status-badge">قيد التطوير</div>
+      </div>
+      <div class="app-card">
+        <div class="app-badge dev">قيد التطوير</div>
+        <div class="app-icon" style="background: linear-gradient(135deg, #9c27b0, #7b1fa2);">🎨</div>
+        <h2>خلفيات إسلامية رائعة</h2>
+        <p class="description">مجموعة مختارة من الخلفيات الإسلامية العصرية والهادئة.</p>
+        <ul class="features-list">
+          <li>مئات الخلفيات الإسلامية عالية الجودة</li>
+          <li>تصاميم عصرية تناسب جميع الأذواق</li>
+          <li>متاحة للهاتف والكمبيوتر</li>
+          <li>تصنيفات متنوعة: آيات، أدعية، مساجد</li>
+        </ul>
+        <div class="status-badge">قيد التطوير</div>
+      </div>
+      <div class="app-card">
+        <div class="app-badge dev">قيد التطوير</div>
+        <div class="app-icon" style="background: linear-gradient(135deg, #2196F3, #1976D2);">🚗</div>
+        <h2>رفيقك المسلي بالسيارة</h2>
+        <p class="description">تطبيق ذكي وخفيف مصمم خصيصاً لشاشات السيارات ورحلات الطريق.</p>
+        <ul class="features-list">
+          <li>تشغيل تلقائي ذكي عند اتصال السيارة</li>
+          <li>تسلسل أدعية تلقائي للرحلة</li>
+          <li>وضع التركيز أثناء القيادة السريعة</li>
+          <li>استهلاك منخفض للذاكرة والبطارية</li>
+        </ul>
+        <div class="status-badge">قيد التطوير</div>
+      </div>
+    </div>
+    <footer>
+      <p>© 2026 AppNest Studio - جميع الحقوق محفوظة</p>
+      <p>تطوير: محمد مطر 🇴</p>
+    </footer>
   </div>
-
-  <!-- سكربتات تشغيل Flutter -->
-  <script src="flutter_bootstrap.js" async></script>
-  
+  <div id="installModal" class="modal">
+    <div class="modal-content">
+      <h3>📥 جاري تحميل التطبيق...</h3>
+      <p style="color: #666; margin: 15px 0;">بعد اكتمال التحميل، اتبع هذه الخطوات:</p>
+      <ol>
+        <li>افتح الملف المحمّل من مجلد التنزيلات في هاتفك.</li>
+        <li>إذا ظهر تحذير "مصدر غير معروف"، اضغط على <strong>"الإعدادات"</strong> وفعّل <strong>"السماح من هذا المصدر"</strong>.</li>
+        <li>اضغط <strong>"تثبيت"</strong> وانتظر حتى يكتمل.</li>
+        <li>افتح التطبيق واستمتع!</li>
+      </ol>
+      <button class="modal-close" onclick="closeModal()">حسناً، فهمت</button>
+    </div>
+  </div>
   <script>
-    // تسجيل Service Worker لدعم العمل بدون إنترنت (PWA)
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', function () {
-        navigator.serviceWorker.register('flutter_service_worker.js?v=3467732336') /* Flutter's service worker is deprecated and will be removed in a future Flutter release. */;
-      });
+    function startInstallation() {
+      document.getElementById('installModal').style.display = 'block';
+      setTimeout(() => {
+        const link = document.createElement('a');
+        link.href = 'https://github.com/matar804-lgtm/matar804-lgtm.github.io/releases/download/v1.0.0/app-release.apk';
+        link.download = 'Tasbiha_App.apk';
+        link.style.display = 'none';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }, 800);
+    }
+    function closeModal() { document.getElementById('installModal').style.display = 'none'; }
+    window.onclick = function(event) {
+      const modal = document.getElementById('installModal');
+      if (event.target == modal) { closeModal(); }
     }
   </script>
 </body>
