@@ -41,7 +41,7 @@
       box-shadow: var(--shadow);
     }
 
-    /* هيدر عصري (جزء علوي) */
+    /* الهيدر العلوي */
     .hero-header {
       background-color: var(--primary);
       color: #ffffff;
@@ -93,11 +93,11 @@
       font-weight: 800;
     }
 
-    /* صندوق المقدمة */
     .content-body {
       padding: 80px 40px 40px;
     }
 
+    /* بطاقة الترحيب */
     .welcome-card {
       background-color: #ffffff;
       padding: 30px;
@@ -133,7 +133,7 @@
       font-size: 1.1rem;
     }
 
-    /* شبكة التطبيقات (Grid) */
+    /* شبكة التطبيقات */
     .apps-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -147,8 +147,9 @@
       border: 1px solid var(--card-border);
       padding: 25px;
       transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .app-card:hover {
@@ -162,7 +163,7 @@
       display: flex;
       align-items: center;
       gap: 15px;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
 
     .app-icon-large {
@@ -179,18 +180,68 @@
     }
 
     .app-title {
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       font-weight: 700;
       color: var(--text-main);
     }
 
     .app-description {
       color: var(--text-muted);
-      font-size: 1rem;
-      min-height: 80px;
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+      flex-grow: 1;
     }
 
-    /* قسم تواصل معنا الجديد */
+    /* أزرار التطبيقات وحالاتها */
+    .app-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      width: 100%;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-dark);
+      box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);
+    }
+
+    .btn-disabled {
+      background-color: #e2e8f0;
+      color: #94a3b8;
+      cursor: not-allowed;
+    }
+
+    .btn-outline {
+      border: 1px solid var(--border-color);
+      background: transparent;
+      color: var(--text-muted);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--primary);
+      color: var(--primary-dark);
+    }
+
+    /* قسم التواصل */
     .modern-contact {
       background: #ffffff;
       border: 1px solid var(--card-border);
@@ -233,7 +284,7 @@
       background-color: var(--primary-dark);
     }
 
-    /* الفوتر النهائي */
+    /* الفوتر */
     .minimal-footer {
       text-align: center;
       padding: 30px 20px;
@@ -242,7 +293,6 @@
       font-size: 0.95rem;
     }
 
-    /* الاستجابة للهواتف (Responsive) */
     @media (max-width: 768px) {
       .hero-header {
         padding: 40px 20px;
@@ -265,7 +315,7 @@
 
   <div class="wrapper">
     
-    <!-- قسم الهيدر الرئيسي الحديث -->
+    <!-- قسم الهيدر -->
     <header class="hero-header">
       <div class="studio-badge">🚀 استوديو AppNest</div>
       <h1 class="studio-title">تطبيقات إسلامية مفيدة</h1>
@@ -274,51 +324,83 @@
 
     <div class="content-body">
       
-      <!-- صندوق ترحيب عائم فوق الهيدر -->
+      <!-- صندوق ترحيب -->
       <div class="welcome-card">
         <div class="welcome-card-icon">✨</div>
         <p class="welcome-text">مرحباً بك في استوديو AppNest<br>
         نطور تطبيقات إسلامية تجمع بين الفائدة والتصميم العصري، لمساعدتك في عبادتك اليومية وتقريبك من الله بتجربة مستخدم سلسة، خفيفة، وممتعة.</p>
       </div>
 
-      <!-- شبكة التطبيقات ببطاقات منفصلة -->
+      <!-- شبكة التطبيقات الأربعة -->
       <main class="apps-grid">
         
+        <!-- تطبيق التسبيح (جاهز للتثبيت) -->
         <div class="app-card">
-          <div class="app-card-header">
-            <div class="app-icon-large">📿</div>
-            <h3 class="app-title">تطبيق التسبيح</h3>
+          <div>
+            <div class="app-card-header">
+              <div class="app-icon-large">📿</div>
+              <h3 class="app-title">تطبيق التسبيح</h3>
+            </div>
+            <p class="app-description">تطبيق إسلامي شامل لمساعدتك على الذكر والدعاء وتنظيم عبادتك اليومية، مع عداد ذكي وبوصلة القبلة وخلفيات إسلامية.</p>
           </div>
-          <p class="app-description">تطبيق إسلامي شامل لمساعدتك على الذكر والدعاء وتنظيم عبادتك اليومية، مع عداد ذكي وبوصلة القبلة وخلفيات إسلامية.</p>
+          <div class="app-actions">
+            <a href="https://github.com/matar804-lgtm" target="_blank" class="btn btn-primary">
+              📥 تثبيت التطبيق الآن
+            </a>
+          </div>
         </div>
 
+        <!-- رزنامة AppNest (قيد التطوير) -->
         <div class="app-card">
-          <div class="app-card-header">
-            <div class="app-icon-large">📅</div>
-            <h3 class="app-title">رزنامة AppNest</h3>
+          <div>
+            <div class="app-card-header">
+              <div class="app-icon-large">📅</div>
+              <h3 class="app-title">رزنامة AppNest</h3>
+            </div>
+            <p class="app-description">تقويمك الإسلامي الذكي الذي يجمع بين الأصالة والمعاصرة عبر عرض متزامن للتقويم الهجري والميلادي وتنبيهات المناسبات.</p>
           </div>
-          <p class="app-description">تقويمك الإسلامي الذكي الذي يجمع بين الأصالة والمعاصرة عبر عرض متزامن للتقويم الهجري والميلادي وتنبيهات المناسبات.</p>
+          <div class="app-actions">
+            <button class="btn btn-disabled" disabled>
+              ⏳ قيد التطوير (قريباً)
+            </button>
+          </div>
         </div>
 
+        <!-- خلفيات إسلامية (قيد التطوير) -->
         <div class="app-card">
-          <div class="app-card-header">
-            <div class="app-icon-large">🎨</div>
-            <h3 class="app-title">خلفيات إسلامية رائعة</h3>
+          <div>
+            <div class="app-card-header">
+              <div class="app-icon-large">🎨</div>
+              <h3 class="app-title">خلفيات إسلامية رائعة</h3>
+            </div>
+            <p class="app-description">مجموعة مختارة من الخلفيات الإسلامية العصرية والهادئة لهاتفك وكمبيوترك عالية الجودة ومتاحة للتحميل بسهولة.</p>
           </div>
-          <p class="app-description">مجموعة مختارة من الخلفيات الإسلامية العصرية والهادئة لهاتفك وكمبيوترك عالية الجودة ومتاحة للتحميل بسهولة.</p>
+          <div class="app-actions">
+            <button class="btn btn-disabled" disabled>
+              ⏳ قيد التطوير (قريباً)
+            </button>
+          </div>
         </div>
 
+        <!-- رفيقك المسلي بالسيارة (قيد التطوير) -->
         <div class="app-card">
-          <div class="app-card-header">
-            <div class="app-icon-large">🚗</div>
-            <h3 class="app-title">رفيقك المسلي بالسيارة</h3>
+          <div>
+            <div class="app-card-header">
+              <div class="app-icon-large">🚗</div>
+              <h3 class="app-title">رفيقك المسلي بالسيارة</h3>
+            </div>
+            <p class="app-description">تطبيق ذكي وخفيف مصمم خصيصاً لشاشات السيارات ورحلات الطريق ليعمل بوضع التركيز وبآمان أثناء القيادة.</p>
           </div>
-          <p class="app-description">تطبيق ذكي وخفيف مصمم خصيصاً لشاشات السيارات ورحلات الطريق ليعمل بوضع التركيز وبآمان أثناء القيادة.</p>
+          <div class="app-actions">
+            <button class="btn btn-disabled" disabled>
+              ⏳ قيد التطوير (قريباً)
+            </button>
+          </div>
         </div>
 
       </main>
 
-      <!-- قسم تواصل معنا المطور بأسلوب هادئ -->
+      <!-- قسم التواصل -->
       <section class="modern-contact">
         <div class="contact-info-block">
           <h2>📬 تواصل معنا</h2>
@@ -331,7 +413,7 @@
 
     </div>
 
-    <!-- الفوتر النهائي المبسط -->
+    <!-- الفوتر -->
     <footer class="minimal-footer">
       <p>© 2026 <strong>استوديو AppNest</strong>. جميع الحقوق محفوظة.</p>
     </footer>
