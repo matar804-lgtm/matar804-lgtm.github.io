@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl" data-theme="light">
 <head>
-    <base href="/">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-5K14PRVXXK"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -13,7 +12,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>استوديو AppNest | محمد مطر - تطبيقات إسلامية عصرية</title>
+    <title>استوديو AppNest | تطبيقات إسلامية وعصرية</title>
     <meta name="description" content="استوديو AppNest لتطوير التطبيقات الإسلامية المفيدة. تسبيح، رزنامة، خلفيات، ورفيق الطريق الذكي للسيارة.">
     
     <meta name="theme-color" content="#10b981">
@@ -35,94 +34,123 @@
     
     <style>
         :root {
-            --primary: #10b981; --primary-dark: #065f46; --accent: #f59e0b; --secondary: #8b5cf6;
-            --bg: #f8fafc; --text: #1e293b; --card-bg: #ffffff; --border-color: #e2e8f0; --nav-bg: rgba(255, 255, 255, 0.95);
+            --primary: #10b981; 
+            --primary-dark: #047857; 
+            --accent: #f59e0b; 
+            --secondary: #8b5cf6;
+            --bg: #f8fafc; 
+            --text: #0f172a; 
+            --card-bg: #ffffff; 
+            --border-color: #e2e8f0; 
+            --nav-bg: rgba(255, 255, 255, 0.85);
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
         [data-theme="dark"] {
-            --primary: #34d399; --primary-dark: #10b981; --accent: #fbbf24; --secondary: #a78bfa;
-            --bg: #0f172a; --text: #f1f5f9; --card-bg: #1e293b; --border-color: #334155; --nav-bg: rgba(15, 23, 42, 0.95);
+            --primary: #34d399; 
+            --primary-dark: #10b981; 
+            --accent: #fbbf24; 
+            --secondary: #a78bfa;
+            --bg: #0f172a; 
+            --text: #f8fafc; 
+            --card-bg: #1e293b; 
+            --border-color: #334155; 
+            --nav-bg: rgba(15, 23, 42, 0.85);
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
         }
+        
         * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-        body { font-family: 'Cairo', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; transition: background 0.3s ease, color 0.3s ease; }
-        .navbar { position: sticky; top: 0; z-index: 1000; background: var(--nav-bg); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-color); padding: 15px 0; }
+        body { font-family: 'Cairo', sans-serif; background: var(--bg); color: var(--text); line-height: 1.8; transition: background 0.3s ease, color 0.3s ease; }
+        
+        /* Navigation */
+        .navbar { position: sticky; top: 0; z-index: 1000; background: var(--nav-bg); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-color); padding: 12px 0; }
         .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; }
-        .nav-logo { font-weight: 900; font-size: 1.3rem; color: var(--primary); display: flex; align-items: center; gap: 8px; }
-        .nav-links { display: flex; gap: 25px; }
-        .nav-links a { text-decoration: none; color: var(--text); font-weight: 600; transition: color 0.3s; }
+        .nav-logo { font-weight: 900; font-size: 1.4rem; color: var(--primary); display: flex; align-items: center; gap: 10px; text-decoration: none; }
+        .nav-links { display: flex; gap: 30px; }
+        .nav-links a { text-decoration: none; color: var(--text); font-weight: 600; transition: color 0.3s; font-size: 0.95rem; }
         .nav-links a:hover { color: var(--primary); }
-        .theme-toggle { background: none; border: 2px solid var(--border-color); color: var(--text); width: 40px; height: 40px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s; }
-        .theme-toggle:hover { border-color: var(--primary); color: var(--primary); transform: rotate(15deg); }
-        .header { background: linear-gradient(-45deg, var(--primary), var(--primary-dark), #059669, #047857); background-size: 400% 400%; animation: gradientBG 15s ease infinite; color: white; padding: 100px 20px 80px; text-align: center; position: relative; overflow: hidden; }
-        @keyframes gradientBG { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
-        .header::before { content: ""; position: absolute; top: -50%; right: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); animation: rotate 30s linear infinite; }
-        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-        .header h1 { margin: 0; font-size: 3rem; font-weight: 900; position: relative; z-index: 1; text-shadow: 0 4px 10px rgba(0,0,0,0.2); }
-        .header p { margin-top: 15px; font-size: 1.3rem; opacity: 0.95; position: relative; z-index: 1; }
-        .header .subtitle { font-size: 1rem; margin-top: 10px; opacity: 0.85; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 50px 20px; }
-        .about { text-align: center; max-width: 800px; margin: 0 auto 50px; background: var(--card-bg); padding: 60px 30px; border-radius: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid var(--border-color); }
-        .about h2 { color: var(--primary-dark); font-size: 2rem; margin-bottom: 15px; }
-        [data-theme="dark"] .about h2 { color: var(--primary); }
+        .theme-toggle { background: var(--card-bg); border: 1px solid var(--border-color); color: var(--text); width: 42px; height: 42px; border-radius: 12px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s; box-shadow: var(--shadow-sm); }
+        .theme-toggle:hover { border-color: var(--primary); color: var(--primary); transform: scale(1.05); }
+        
+        /* Header / Hero Section */
+        .header { background: linear-gradient(135deg, #065f46 0%, #10b981 50%, #047857 100%); color: white; padding: 110px 20px 90px; text-align: center; position: relative; overflow: hidden; }
+        .header::after { content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 40px; background: var(--bg); clip-path: polygon(0 100%, 100% 100%, 100% 0); }
+        .header h1 { margin: 0; font-size: 3.2rem; font-weight: 900; position: relative; z-index: 1; letter-spacing: -1px; }
+        .header p { margin-top: 15px; font-size: 1.3rem; opacity: 0.95; position: relative; z-index: 1; max-width: 700px; margin-left: auto; margin-right: auto; }
+        .header .subtitle { font-size: 1rem; margin-top: 12px; opacity: 0.85; background: rgba(255, 255, 255, 0.15); display: inline-block; padding: 4px 16px; border-radius: 20px; backdrop-filter: blur(5px); }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+        
+        /* About Section */
+        .about { text-align: center; max-width: 850px; margin: 0 auto 60px; background: var(--card-bg); padding: 50px 30px; border-radius: 24px; box-shadow: var(--shadow-sm); border: 1px solid var(--border-color); }
+        .about h2 { color: var(--primary); font-size: 2rem; margin-bottom: 15px; font-weight: 800; }
         .about p { font-size: 1.1rem; color: #64748b; }
         [data-theme="dark"] .about p { color: #94a3b8; }
-        .apps { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 50px; }
-        .app-card { background: var(--card-bg); border-radius: 20px; padding: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); border-top: 5px solid var(--primary); border: 1px solid var(--border-color); position: relative; overflow: hidden; }
-        .app-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(16, 185, 129, 0.15); border-color: var(--primary); }
-        .app-card:nth-child(2) { border-top-color: var(--secondary); }
-        .app-card:nth-child(2):hover { box-shadow: 0 20px 40px rgba(139, 92, 246, 0.15); border-color: var(--secondary); }
-        .app-card:nth-child(3) { border-top-color: var(--accent); }
-        .app-card:nth-child(3):hover { box-shadow: 0 20px 40px rgba(245, 158, 11, 0.15); border-color: var(--accent); }
-        .app-card:nth-child(4) { border-top-color: #ec4899; }
-        .app-card:nth-child(4):hover { box-shadow: 0 20px 40px rgba(236, 72, 153, 0.15); border-color: #ec4899; }
-        .app-card h3 { margin-top: 0; color: var(--primary-dark); font-size: 1.5rem; margin-bottom: 5px; }
-        [data-theme="dark"] .app-card h3 { color: var(--primary); }
-        .app-card > p { color: #64748b; margin-bottom: 15px; font-size: 0.95rem; }
+        
+        /* Apps Section */
+        .apps { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-bottom: 60px; }
+        .app-card { background: var(--card-bg); border-radius: 24px; padding: 32px; box-shadow: var(--shadow-sm); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid var(--border-color); position: relative; display: flex; flex-direction: column; }
+        .app-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); border-color: var(--primary); }
+        
+        .status-badge { position: absolute; top: 20px; left: 20px; padding: 4px 12px; border-radius: 12px; font-size: 0.8rem; font-weight: 700; }
+        .status-badge.available { background: rgba(16, 185, 129, 0.15); color: var(--primary); }
+        .status-badge.coming-soon { background: rgba(245, 158, 11, 0.15); color: var(--accent); }
+        
+        .app-icon { font-size: 3.2rem; margin-bottom: 15px; display: block; }
+        .app-card h3 { color: var(--text); font-size: 1.6rem; margin-bottom: 8px; font-weight: 800; }
+        .app-card > p { color: #64748b; margin-bottom: 15px; font-size: 0.95rem; min-height: 48px; }
         [data-theme="dark"] .app-card > p { color: #94a3b8; }
-        .app-icon { font-size: 3.5rem; margin-bottom: 15px; display: block; text-align: center; }
-        .app-image { width: 100%; max-width: 280px; border-radius: 15px; margin: 15px auto 25px; display: block; box-shadow: 0 8px 25px rgba(0,0,0,0.1); transition: transform 0.4s ease; background: #e2e8f0; min-height: 200px; object-fit: cover; }
-        .app-card:hover .app-image { transform: scale(1.05) rotate(1deg); }
-        .features { list-style: none; padding: 0; margin: 20px 0; }
-        .features li { margin-bottom: 12px; padding-right: 35px; position: relative; font-size: 1rem; color: #334155; }
-        [data-theme="dark"] .features li { color: #cbd5e1; }
-        .features li::before { content: "✓"; position: absolute; right: 0; top: 2px; color: white; background: var(--primary); width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: bold; box-shadow: 0 2px 5px rgba(16, 185, 129, 0.3); }
-        .btn-group { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 25px; }
-        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 24px; border-radius: 12px; text-decoration: none; font-weight: 700; transition: all 0.3s ease; font-size: 1rem; flex: 1; min-width: 150px; cursor: pointer; border: none; }
-        .btn-primary { background: var(--primary); color: white; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3); }
-        .btn-primary:hover { background: var(--primary-dark); transform: translateY(-3px); box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4); }
-        .btn-secondary { background: transparent; border: 2px dashed var(--accent); color: var(--accent); cursor: default; }
-        .btn-secondary:hover { background: rgba(245, 158, 11, 0.1); }
-        .app-card.coming-soon { border-top-color: var(--accent); }
-        .coming-soon-badge { background: var(--accent); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.9rem; font-weight: bold; margin-bottom: 15px; display: inline-block; }
-        .contact-section { background: var(--card-bg); border-radius: 25px; padding: 50px 30px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-bottom: 40px; border: 1px solid var(--border-color); }
-        .contact-section h2 { color: var(--primary-dark); font-size: 1.8rem; margin-bottom: 10px; }
-        [data-theme="dark"] .contact-section h2 { color: var(--primary); }
+        
+        .app-image { width: 100%; border-radius: 16px; margin: 10px auto 20px; display: block; box-shadow: 0 4px 12px rgba(0,0,0,0.08); background: var(--border-color); min-height: 180px; object-fit: cover; }
+        
+        .features { list-style: none; padding: 0; margin: 15px 0 25px; flex-grow: 1; }
+        .features li { margin-bottom: 10px; padding-right: 30px; position: relative; font-size: 0.95rem; color: var(--text); opacity: 0.9; }
+        .features li::before { content: "✓"; position: absolute; right: 0; top: 2px; color: var(--primary); font-weight: 900; font-size: 1rem; }
+        
+        .btn-group { margin-top: auto; }
+        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 14px 20px; border-radius: 14px; text-decoration: none; font-weight: 700; transition: all 0.2s ease; font-size: 1rem; cursor: pointer; border: none; }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); }
+        .btn-disabled { background: var(--border-color); color: #94a3b8; cursor: not-allowed; }
+        
+        /* Contact Section */
+        .contact-section { background: var(--card-bg); border-radius: 24px; padding: 50px 30px; text-align: center; box-shadow: var(--shadow-sm); margin-bottom: 60px; border: 1px solid var(--border-color); }
+        .contact-section h2 { color: var(--primary); font-size: 2rem; margin-bottom: 10px; font-weight: 800; }
         .contact-section p { color: #64748b; margin-bottom: 30px; }
         [data-theme="dark"] .contact-section p { color: #94a3b8; }
-        .social-links { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
-        .social-link { display: inline-flex; align-items: center; justify-content: center; width: 55px; height: 55px; border-radius: 50%; color: white; font-size: 1.4rem; text-decoration: none; transition: all 0.3s ease; }
-        .social-link:hover { transform: translateY(-8px) scale(1.1); box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
-        .social-link.email { background: #EA4335; }
-        .footer { text-align: center; padding: 40px 20px; color: #64748b; font-size: 0.95rem; border-top: 2px solid var(--border-color); background: var(--card-bg); }
-        .footer strong { color: var(--primary-dark); }
-        [data-theme="dark"] .footer strong { color: var(--primary); }
-        .back-to-top { position: fixed; bottom: 30px; left: 30px; width: 50px; height: 50px; background: var(--primary); color: white; border: none; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4); opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 999; }
-        .back-to-top.visible { opacity: 1; visibility: visible; }
-        .back-to-top:hover { background: var(--primary-dark); transform: translateY(-5px); }
-        .fade-in-up { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
-        .fade-in-up.visible { opacity: 1; transform: translateY(0); }
         
-        /* Modal Styles for Installation */
-        .install-modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); animation: fadeIn 0.3s; }
+        .form-group { margin-bottom: 18px; text-align: right; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.95rem; }
+        .form-control { width: 100%; padding: 14px; border: 1px solid var(--border-color); border-radius: 12px; background: var(--bg); color: var(--text); font-family: 'Cairo', sans-serif; font-size: 0.95rem; transition: border-color 0.2s; outline: none; }
+        .form-control:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15); }
+        
+        /* Footer */
+        .footer { text-align: center; padding: 40px 20px; color: #64748b; font-size: 0.95rem; border-top: 1px solid var(--border-color); background: var(--card-bg); }
+        
+        /* Back to top button */
+        .back-to-top { position: fixed; bottom: 30px; left: 30px; width: 48px; height: 48px; background: var(--primary); color: white; border: none; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.15); opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 999; }
+        .back-to-top.visible { opacity: 1; visibility: visible; }
+        .back-to-top:hover { background: var(--primary-dark); transform: translateY(-3px); }
+
+        /* Installation Modal */
+        .install-modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); backdrop-filter: blur(4px); animation: fadeIn 0.3s; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        .install-modal-content { background: var(--card-bg); margin: 15% auto; padding: 35px; border-radius: 25px; max-width: 450px; text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,0.3); animation: slideDown 0.3s; border: 1px solid var(--border-color); }
-        @keyframes slideDown { from { transform: translateY(-50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-        .install-modal-content h3 { color: var(--primary); font-size: 1.6em; margin-bottom: 15px; }
-        .install-modal-content ol { text-align: right; line-height: 1.9; margin: 15px 0; color: var(--text); padding-right: 20px; }
-        .modal-close-btn { background: var(--primary); color: white; padding: 12px 35px; border-radius: 12px; border: none; cursor: pointer; font-size: 1rem; font-weight: bold; margin-top: 15px; transition: background 0.3s; }
+        .install-modal-content { background: var(--card-bg); margin: 12% auto; padding: 35px; border-radius: 24px; max-width: 460px; text-align: center; box-shadow: var(--shadow-lg); border: 1px solid var(--border-color); }
+        .install-modal-content h3 { color: var(--primary); font-size: 1.5rem; margin-bottom: 12px; font-weight: 800; }
+        .install-modal-content ol { text-align: right; line-height: 2; margin: 20px 0; color: var(--text); padding-right: 20px; font-size: 0.95rem; }
+        .modal-close-btn { background: var(--primary); color: white; padding: 12px 30px; border-radius: 12px; border: none; cursor: pointer; font-size: 1rem; font-weight: 700; width: 100%; transition: background 0.2s; }
         .modal-close-btn:hover { background: var(--primary-dark); }
 
+        /* Fade Animation */
+        .fade-in-up { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+        .fade-in-up.visible { opacity: 1; transform: translateY(0); }
+
         @media (max-width: 600px) {
-            .header h1 { font-size: 2rem; } .header p { font-size: 1.1rem; } .about h2 { font-size: 1.5rem; } .about { padding: 40px 20px; } .btn { width: 100%; } .nav-links { display: none; }
+            .header h1 { font-size: 2.2rem; } 
+            .header p { font-size: 1.1rem; } 
+            .about { padding: 35px 20px; } 
+            .nav-links { display: none; }
         }
     </style>
 </head>
@@ -130,32 +158,33 @@
 
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-logo"><i class="fas fa-cube"></i> استوديو AppNest</div>
+            <a href="#" class="nav-logo"><i class="fas fa-cube"></i> استوديو AppNest</a>
             <div class="nav-links">
                 <a href="#about">عن الاستوديو</a>
                 <a href="#apps">التطبيقات</a>
                 <a href="#contact">تواصل معنا</a>
             </div>
-            <button class="theme-toggle" id="theme-toggle" title="تبديل الوضع الليلي"><i class="fas fa-moon"></i></button>
+            <button class="theme-toggle" id="theme-toggle" title="تبديل الوضع"><i class="fas fa-moon"></i></button>
         </div>
     </nav>
 
     <div class="header">
         <h1>🚀 استوديو AppNest</h1>
         <p>تطبيقات إسلامية مفيدة بتصميم عصري وتجربة مستخدم استثنائية</p>
-        <p class="subtitle">تطوير: محمد مطر</p>
+        <div class="subtitle">تطوير: محمد مطر</div>
     </div>
     
     <div class="container">
         <div id="about" class="about fade-in-up">
-            <h2>✨ مرحباً بك في استوديو AppNest</h2>
+            <h2>✨ مرحباً بك في AppNest</h2>
             <p>نطور تطبيقات إسلامية تجمع بين الفائدة والتصميم العصري، لمساعدتك في عبادتك اليومية وتقريبك من الله بتجربة مستخدم سلسة، خفيفة، وممتعة.</p>
         </div>
         
         <div id="apps" class="apps">
             
-            <!-- تطبيق التسبيح (تم التعديل هنا) -->
+            <!-- تطبيق التسبيح -->
             <div class="app-card fade-in-up">
+                <span class="status-badge available"><i class="fas fa-check-circle"></i> متاح للتحميل</span>
                 <span class="app-icon">📿</span>
                 <h3>تطبيق التسبيح</h3>
                 <p>تطبيق إسلامي شامل لمساعدتك على الذكر والدعاء وتنظيم عبادتك اليومية.</p>
@@ -165,75 +194,68 @@
                     <li>مجموعة شاملة من 100 دعاء للأمنيات</li>
                     <li>أذكار الصباح والمساء ومناسبات مختلفة</li>
                     <li>بوصلة قبلة دقيقة وموثوقة</li>
-                    <li>خلفيات إسلامية و 5 تصاميم للمسبحة مع 8 ألوان</li>
-                    <li>نظام إنجازات لتحفيزك على الاستمرار</li>
+                    <li>خلفيات إسلامية و 5 تصاميم للمسبحة</li>
+                    <li>نظام إنجازات وتحفيز يومي</li>
                 </ul>
                 <div class="btn-group">
-                    <button class="btn btn-primary" onclick="startInstallation(); trackEvent('install_click', {app: 'tasbih'})" style="width: 100%;">
+                    <button class="btn btn-primary" onclick="startInstallation(); trackEvent('install_click', {app: 'tasbih'})">
                         <i class="fas fa-download"></i> تثبيت التطبيق (APK)
                     </button>
                 </div>
             </div>
 
-            <!-- التطبيقات الأخرى (قيد التطوير) -->
-            <div class="app-card coming-soon fade-in-up">
-                <span class="coming-soon-badge">قريباً</span>
+            <!-- رزنامة AppNest -->
+            <div class="app-card fade-in-up">
+                <span class="status-badge coming-soon"><i class="fas fa-clock"></i> قريباً</span>
                 <span class="app-icon">📅</span>
                 <h3>رزنامة AppNest</h3>
                 <p>تقويمك الإسلامي الذكي الذي يجمع بين الأصالة والمعاصرة.</p>
                 <img src="calendar1.png" alt="رزنامة AppNest" class="app-image" loading="lazy" onerror="this.style.display='none'">
                 <ul class="features">
-                    <li>عرض متزامن للتقويم الهجري والميلادي بلمسة عصرية</li>
-                    <li>تنبيهات تلقائية لجميع المناسبات الإسلامية</li>
-                    <li>تمييز الأشهر الحرم والأيام الفاضلة بصرياً</li>
-                    <li>واجهة هادئة وأنيقة تدعم الوضع الليلي</li>
-                    <li>إضافة ملاحظاتك الشخصية وربطها بالمناسبات</li>
+                    <li>عرض متزامن للتقويم الهجري والميلادي</li>
+                    <li>تنبيهات تلقائية للمناسبات الإسلامية</li>
+                    <li>تمييز الأشهر الحرم والأيام الفاضلة</li>
+                    <li>واجهة هادئة أنيقة تدعم الوضع الليلي</li>
+                    <li>ملاحظات شخصية مرتبطة بالمناسبات</li>
                 </ul>
-                <div class="btn-group" style="justify-content: center;">
-                    <a href="#" class="btn btn-secondary" style="cursor: default;">
-                        <i class="fas fa-tools"></i> قيد التطوير
-                    </a>
+                <div class="btn-group">
+                    <button class="btn btn-disabled" disabled><i class="fas fa-tools"></i> قيد التطوير</button>
                 </div>
             </div>
 
-            <div class="app-card coming-soon fade-in-up">
-                <span class="coming-soon-badge">قريباً</span>
+            <!-- خلفيات إسلامية -->
+            <div class="app-card fade-in-up">
+                <span class="status-badge coming-soon"><i class="fas fa-clock"></i> قريباً</span>
                 <span class="app-icon">🎨</span>
-                <h3>خلفيات إسلامية رائعة</h3>
-                <p>مجموعة مختارة من الخلفيات الإسلامية العصرية والهادئة لهاتفك وكمبيوترك.</p>
+                <h3>خلفيات إسلامية</h3>
+                <p>مجموعة مختارة من الخلفيات العصرية والهادئة لهاتفك وحاسوبك.</p>
                 <img src="wallpaper1.png" alt="خلفيات إسلامية" class="app-image" loading="lazy" onerror="this.style.display='none'">
                 <ul class="features">
-                    <li>مئات الخلفيات الإسلامية عالية الجودة</li>
+                    <li>خلفيات عالية الجودة 4K/HD</li>
                     <li>تصاميم عصرية تناسب جميع الأذواق</li>
-                    <li>متاحة للهاتف والكمبيوتر</li>
-                    <li>تصنيفات متنوعة: آيات، أدعية، مساجد، طبيعة</li>
-                    <li>إمكانية التحميل والمشاركة بسهولة</li>
+                    <li>تصنيفات متنوعة: آيات، أدعية، مساجد</li>
+                    <li>إمكانية التحميل والمشاركة بضغطة زر</li>
                 </ul>
-                <div class="btn-group" style="justify-content: center;">
-                    <a href="#" class="btn btn-secondary" style="cursor: default;">
-                        <i class="fas fa-tools"></i> قيد التطوير
-                    </a>
+                <div class="btn-group">
+                    <button class="btn btn-disabled" disabled><i class="fas fa-tools"></i> قيد التطوير</button>
                 </div>
             </div>
 
-            <div class="app-card coming-soon fade-in-up">
-                <span class="coming-soon-badge">قريباً</span>
+            <!-- رفيق الطريق -->
+            <div class="app-card fade-in-up">
+                <span class="status-badge coming-soon"><i class="fas fa-clock"></i> قريباً</span>
                 <span class="app-icon">🚗</span>
-                <h3>رفيقك المسلي بالسيارة</h3>
+                <h3>رفيق الطريق</h3>
                 <p>تطبيق ذكي وخفيف مصمم خصيصاً لشاشات السيارات ورحلات الطريق.</p>
                 <img src="car_companion1.png" alt="رفيق الطريق" class="app-image" loading="lazy" onerror="this.style.display='none'">
                 <ul class="features">
-                    <li>تشغيل تلقائي ذكي عند اتصال السيارة</li>
-                    <li>تسلسل أدعية تلقائي (ركوب → سفر → صباح/مساء)</li>
-                    <li>استراتيجية Freemium Offline</li>
-                    <li>وضع التركيز أثناء القيادة السريعة</li>
+                    <li>تشغيل تلقائي عند اتصال السيارة</li>
+                    <li>تسلسل أدعية تلقائي للركوب والسفر</li>
+                    <li>وضع التركيز الخاص أثناء القيادة</li>
                     <li>استهلاك منخفض للذاكرة والبطارية</li>
-                    <li>إحصائيات أسبوعية للإنجازات الروحية</li>
                 </ul>
-                <div class="btn-group" style="justify-content: center;">
-                    <a href="#" class="btn btn-secondary" style="cursor: default;">
-                        <i class="fas fa-tools"></i> قيد التطوير
-                    </a>
+                <div class="btn-group">
+                    <button class="btn btn-disabled" disabled><i class="fas fa-tools"></i> قيد التطوير</button>
                 </div>
             </div>
 
@@ -241,71 +263,69 @@
         
         <div id="contact" class="contact-section fade-in-up">
             <h2>📬 تواصل معنا</h2>
-            <p>نسعد بتواصلك معنا للاستفسارات والاقتراحات</p>
+            <p>نسعد بتواصلك معنا للاستفسارات والأفكار والاقتراحات</p>
             
-            <form action="https://formspree.io/f/mrenaaoy" method="POST" style="max-width: 500px; margin: 0 auto; text-align: right;" onsubmit="trackEvent('form_submit', {category: 'contact'})">
-                <div style="margin-bottom: 15px;">
-                    <label style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--text);">الاسم:</label>
-                    <input type="text" name="name" required style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 10px; background: var(--bg); color: var(--text); font-family: 'Cairo', sans-serif; font-size: 1rem; transition: border-color 0.3s;" onfocus="this.style.borderColor='var(--primary)'" onblur="this.style.borderColor='var(--border-color)'">
+            <form action="https://formspree.io/f/mrenaaoy" method="POST" style="max-width: 520px; margin: 0 auto;" onsubmit="trackEvent('form_submit', {category: 'contact'})">
+                <div class="form-group">
+                    <label>الاسم</label>
+                    <input type="text" name="name" class="form-control" placeholder="أدخل اسمك الكريم" required>
                 </div>
-                <div style="margin-bottom: 15px;">
-                    <label style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--text);">بريدك الإلكتروني:</label>
-                    <input type="email" name="email" required style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 10px; background: var(--bg); color: var(--text); font-family: 'Cairo', sans-serif; font-size: 1rem; transition: border-color 0.3s;" onfocus="this.style.borderColor='var(--primary)'" onblur="this.style.borderColor='var(--border-color)'">
+                <div class="form-group">
+                    <label>البريد الإلكتروني</label>
+                    <input type="email" name="email" class="form-control" placeholder="example@domain.com" required>
                 </div>
-                <div style="margin-bottom: 20px;">
-                    <label style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--text);">الرسالة:</label>
-                    <textarea name="message" rows="4" required style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 10px; background: var(--bg); color: var(--text); font-family: 'Cairo', sans-serif; font-size: 1rem; resize: vertical; transition: border-color 0.3s;" onfocus="this.style.borderColor='var(--primary)'" onblur="this.style.borderColor='var(--border-color)'"></textarea>
+                <div class="form-group">
+                    <label>الرسالة</label>
+                    <textarea name="message" rows="4" class="form-control" placeholder="اكتب رسالتك أو اقتراحك هنا..." required></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%; font-family: 'Cairo', sans-serif;">
+                <button type="submit" class="btn btn-primary">
                     <i class="fas fa-paper-plane"></i> إرسال الرسالة
                 </button>
             </form>
-
-            <div style="margin-top: 30px; border-top: 1px solid var(--border-color); padding-top: 20px;">
-                <p style="font-size: 0.9rem; margin-bottom: 10px; color: var(--text);">أو راسلنا مباشرة عبر:</p>
-                <a href="mailto:appnest.studio01@gmail.com" class="social-link email" title="البريد الإلكتروني" style="display: inline-flex;" onclick="trackEvent('email_click', {category: 'contact'})">
-                    <i class="fas fa-envelope"></i>
-                </a>
-            </div>
         </div>
     </div>
     
     <div class="footer">
         <p>© 2026 <strong>استوديو AppNest</strong>. جميع الحقوق محفوظة.</p>
-        <p>📧 appnest.studio01@gmail.com</p>
+        <p style="margin-top: 5px;">📧 appnest.studio01@gmail.com</p>
     </div>
 
     <button class="back-to-top" id="backToTop" title="العودة للأعلى">
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- نافذة تعليمات التثبيت -->
+    <!-- Modal -->
     <div id="installModal" class="install-modal">
         <div class="install-modal-content">
             <h3>📥 جاري تحميل التطبيق...</h3>
-            <p style="color: var(--text); margin: 15px 0; opacity: 0.8;">بعد اكتمال التحميل، اتبع هذه الخطوات:</p>
+            <p style="color: var(--text); opacity: 0.8;">بعد اكتمال التحميل، اتبع الخطوات التالية للتثبيت:</p>
             <ol>
-                <li>افتح الملف المحمّل من مجلد التنزيلات في هاتفك.</li>
-                <li>إذا ظهر تحذير "مصدر غير معروف"، اضغط على <strong>"الإعدادات"</strong> وفعّل <strong>"السماح من هذا المصدر"</strong>.</li>
-                <li>اضغط <strong>"تثبيت"</strong> وانتظر حتى يكتمل.</li>
-                <li>افتح التطبيق واستمتع!</li>
+                <li>افتح ملف الـ APK من مجلد <strong>التنزيلات</strong>.</li>
+                <li>إذا ظهر تحذير التثبيت، اختر <strong>الإعدادات</strong> وفعّل <strong>السماح من هذا المصدر</strong>.</li>
+                <li>اضغط على <strong>تثبيت</strong> واستمتع بالتطبيق!</li>
             </ol>
             <button class="modal-close-btn" onclick="closeModal()">حسناً، فهمت</button>
         </div>
     </div>
 
     <script>
-        // 1. Dark Mode Logic
+        // Dark Mode Logic
         const themeToggle = document.getElementById('theme-toggle');
         const htmlElement = document.documentElement;
         const icon = themeToggle.querySelector('i');
         const savedTheme = localStorage.getItem('theme') || 'light';
+        
         htmlElement.setAttribute('data-theme', savedTheme);
-        function updateIcon(theme) {
-            if (theme === 'dark') { icon.classList.remove('fa-moon'); icon.classList.add('fa-sun'); } 
-            else { icon.classList.remove('fa-sun'); icon.classList.add('fa-moon'); }
-        }
         updateIcon(savedTheme);
+
+        function updateIcon(theme) {
+            if (theme === 'dark') { 
+                icon.className = 'fas fa-sun'; 
+            } else { 
+                icon.className = 'fas fa-moon'; 
+            }
+        }
+
         themeToggle.addEventListener('click', () => {
             const currentTheme = htmlElement.getAttribute('data-theme');
             const newTheme = currentTheme === 'light' ? 'dark' : 'light';
@@ -314,29 +334,32 @@
             updateIcon(newTheme);
         });
 
-        // 2. Scroll Animation Logic
+        // Scroll Animation Logic
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+            entries.forEach(entry => { 
+                if (entry.isIntersecting) entry.target.classList.add('visible'); 
+            });
+        }, { threshold: 0.1 });
+        
         document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
 
-        // 3. Back to Top Logic
+        // Back to Top Logic
         const backToTopBtn = document.getElementById('backToTop');
         window.addEventListener('scroll', () => {
             backToTopBtn.classList.toggle('visible', window.scrollY > 300);
         });
         backToTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-        // 4. PWA Service Worker Registration
+        // PWA Service Worker Registration
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('sw.js')
-                    .then(reg => console.log('✅ Service Worker registered:', reg.scope))
-                    .catch(err => console.log('❌ Service Worker registration failed:', err));
+                    .then(reg => console.log('SW registered'))
+                    .catch(err => console.log('SW failed', err));
             });
         }
 
-        // 5. Installation Modal & Download Logic
+        // Download Modal
         function startInstallation() {
             document.getElementById('installModal').style.display = 'block';
             setTimeout(() => {
@@ -347,14 +370,16 @@
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);
-            }, 800);
+            }, 600);
         }
+
         function closeModal() { 
             document.getElementById('installModal').style.display = 'none'; 
         }
+
         window.onclick = function(event) {
             const modal = document.getElementById('installModal');
-            if (event.target == modal) { closeModal(); }
+            if (event.target === modal) closeModal();
         }
     </script>
 </body>
