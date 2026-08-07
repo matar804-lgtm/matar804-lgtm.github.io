@@ -192,7 +192,7 @@
       flex-grow: 1;
     }
 
-    /* أزرار التطبيقات وحالاتها */
+    /* أزرار التطبيقات */
     .app-actions {
       display: flex;
       gap: 10px;
@@ -203,9 +203,9 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
-      padding: 10px 16px;
+      padding: 12px 16px;
       border-radius: 10px;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       font-weight: 700;
       text-decoration: none;
       transition: all 0.2s ease;
@@ -228,17 +228,6 @@
       background-color: #e2e8f0;
       color: #94a3b8;
       cursor: not-allowed;
-    }
-
-    .btn-outline {
-      border: 1px solid var(--border-color);
-      background: transparent;
-      color: var(--text-muted);
-    }
-
-    .btn-outline:hover {
-      border-color: var(--primary);
-      color: var(--primary-dark);
     }
 
     /* قسم التواصل */
@@ -331,10 +320,10 @@
         نطور تطبيقات إسلامية تجمع بين الفائدة والتصميم العصري، لمساعدتك في عبادتك اليومية وتقريبك من الله بتجربة مستخدم سلسة، خفيفة، وممتعة.</p>
       </div>
 
-      <!-- شبكة التطبيقات الأربعة -->
+      <!-- شبكة التطبيقات -->
       <main class="apps-grid">
         
-        <!-- تطبيق التسبيح (جاهز للتثبيت) -->
+        <!-- تطبيق التسبيح (تحميل مباشر) -->
         <div class="app-card">
           <div>
             <div class="app-card-header">
@@ -344,8 +333,9 @@
             <p class="app-description">تطبيق إسلامي شامل لمساعدتك على الذكر والدعاء وتنظيم عبادتك اليومية، مع عداد ذكي وبوصلة القبلة وخلفيات إسلامية.</p>
           </div>
           <div class="app-actions">
-            <a href="https://github.com/matar804-lgtm" target="_blank" class="btn btn-primary">
-              📥 تثبيت التطبيق الآن
+            <!-- خاصية download مع مسار ملف APK المباشر للتنزيل الشفاف -->
+            <a href="tasbeeh.apk" download="Tasbeeh-App.apk" class="btn btn-primary">
+              📥 تنزيل وتثبيت التطبيق مباشرة
             </a>
           </div>
         </div>
