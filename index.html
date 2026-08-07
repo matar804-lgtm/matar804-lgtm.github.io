@@ -1,196 +1,283 @@
-إليك مفهوماً جديداً كلياً وعصرياً لموقع الاستوديو **AppNest** يسمى **"نمط النيون الإسلامي الفاخر (Neo-Islamic Luxury UI)"**:
-
----
-
-### 🎨 فكرة التصميم وشكل الصورة المرئية:
-
-1. **الخلفية:** رمادي ليلكي داكن ناعم جدًا مع إضاءة خلفية دائرية متدرجة (Radial Emerald Glow).
-2. **شاشات التطبيقات:** الهواتف تعرض شاشة تطبيق التسبيح والقرآن بصورة ثلاثية الأبعاد (Isometric 3D) بحيث تطفو فوق بطاقات زجاجية شفافة.
-3. **الأزرار والأيقونات:** أزرار خضراء نيون ناعمة تضيء عند مرور المؤشر، مع أيقونات بأسلوب بسيط ونظيف (Minimalist White Icons).
-
----
-
-### 💻 كود الـ HTML/CSS للتصميم الجديد:
-
-يمكنك نسخ الكود واستبدال محتوى `index.html` في GitHub لتجربة هذا الشكل الجديد فوراً:
-
-```html
 <!DOCTYPE html>
-<html lang="ar" dir="rtl" data-theme="dark">
+<html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>استوديو AppNest | Neo-Islamic UI</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --bg: #0d1117;
-            --card-bg: rgba(22, 27, 34, 0.75);
-            --accent-green: #10b981;
-            --accent-glow: rgba(16, 185, 129, 0.4);
-            --gold: #fbbf24;
-            --text-main: #f3f4f6;
-            --text-sub: #9ca3af;
-            --border: rgba(255, 255, 255, 0.1);
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>أهداف استوديو AppNest</title>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #10b981;
+      --primary-dark: #059669;
+      --primary-light: #e6f4ea;
+      --bg-color: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --border-color: #e2e8f0;
+      --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+    }
 
-        body {
-            font-family: 'Cairo', sans-serif;
-            background-color: var(--bg);
-            color: var(--text-main);
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        /* Ambient Lights */
-        .glow-1 {
-            position: absolute;
-            top: -50px;
-            right: 15%;
-            width: 350px;
-            height: 350px;
-            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
-            filter: blur(50px);
-            z-index: 0;
-        }
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.7;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
 
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            position: relative;
-            z-index: 1;
-        }
+    .container {
+      max-width: 850px;
+      width: 100%;
+      background: var(--card-bg);
+      border-radius: 24px;
+      padding: 40px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border-color);
+    }
 
-        /* Header / Banner */
-        .hero {
-            text-align: center;
-            padding: 60px 20px;
-            background: var(--card-bg);
-            border-radius: 28px;
-            border: 1px solid var(--border);
-            backdrop-filter: blur(15px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-            margin-bottom: 50px;
-        }
+    .header {
+      text-align: center;
+      margin-bottom: 35px;
+      padding-bottom: 25px;
+      border-bottom: 2px stroke var(--primary-light);
+      position: relative;
+    }
 
-        .hero h1 {
-            font-size: 3rem;
-            font-weight: 900;
-            background: linear-gradient(135deg, #ffffff, var(--accent-green));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 10px;
-        }
+    .header::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background-color: var(--primary);
+      border-radius: 2px;
+    }
 
-        .hero p {
-            font-size: 1.2rem;
-            color: var(--text-sub);
-        }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background-color: var(--primary-light);
+      color: var(--primary-dark);
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
 
-        .badge-dev {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 6px 16px;
-            background: rgba(251, 191, 36, 0.15);
-            color: var(--gold);
-            border: 1px solid rgba(251, 191, 36, 0.3);
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 700;
-        }
+    .title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
 
-        /* App Cards Grid */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
 
-        .card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 24px;
-            padding: 25px;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-            position: relative;
-        }
+    .subtitle strong {
+      color: var(--primary-dark);
+    }
 
-        .card:hover {
-            transform: translateY(-8px);
-            border-color: var(--accent-green);
-            box-shadow: 0 15px 30px var(--accent-glow);
-        }
+    .goals-grid {
+      display: grid;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
 
-        .card-icon {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            display: inline-block;
-        }
+    .goal-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      background-color: #ffffff;
+      border: 1px solid var(--border-color);
+      padding: 20px;
+      border-radius: 16px;
+      transition: all 0.3s ease;
+    }
 
-        .card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 10px;
-        }
+    .goal-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.08);
+    }
 
-        .card p {
-            color: var(--text-sub);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
+    .icon-wrapper {
+      width: 48px;
+      height: 48px;
+      background-color: var(--primary-light);
+      color: var(--primary);
+      border-radius: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
 
-        .btn-download {
-            display: block;
-            width: 100%;
-            padding: 12px;
-            margin-top: 20px;
-            background: linear-gradient(135deg, var(--accent-green), #059669);
-            color: white;
-            text-align: center;
-            border-radius: 14px;
-            text-decoration: none;
-            font-weight: 700;
-            box-shadow: 0 4px 15px var(--accent-glow);
-            transition: transform 0.2s;
-        }
+    .goal-content h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 6px;
+    }
 
-        .btn-download:hover {
-            transform: scale(1.02);
-        }
-    </style>
+    .goal-content p {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+    }
+
+    /* قسم التواصل والنهاية */
+    .contact-section {
+      background-color: #f8fafc;
+      border: 1px dashed var(--border-color);
+      border-radius: 16px;
+      padding: 25px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .contact-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text-main);
+    }
+
+    .contact-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 15px;
+    }
+
+    .email-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #ffffff;
+      padding: 10px 20px;
+      border-radius: 50px;
+      border: 1px solid var(--border-color);
+      color: var(--primary-dark);
+      font-weight: 700;
+      text-decoration: none;
+      direction: ltr;
+      transition: border-color 0.2s ease;
+    }
+
+    .email-box:hover {
+      border-color: var(--primary);
+    }
+
+    .footer {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-color);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 25px 18px;
+      }
+      .title {
+        font-size: 1.75rem;
+      }
+      .goal-card {
+        flex-direction: column;
+        gap: 12px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <div class="glow-1"></div>
+  <div class="container">
+    
+    <!-- الهيدر -->
+    <header class="header">
+      <div class="badge">🚀 استوديو AppNest</div>
+      <h1 class="title">أهداف الاستوديو</h1>
+      <p class="subtitle">رؤية وتطوير: <strong>محمد مطر</strong></p>
+    </header>
 
-    <div class="container">
-        <div class="hero">
-            <h1>AppNest Studio</h1>
-            <p>تطبيقات إسلامية بلمسات نيون عصرية وتجربة فريدة</p>
-            <span class="badge-dev">✨ إبتكار وتطوير: محمد مطر</span>
+    <!-- قائمة الأهداف -->
+    <main class="goals-grid">
+      
+      <div class="goal-card">
+        <div class="icon-wrapper">📱</div>
+        <div class="goal-content">
+          <h3>تطوير تطبيقات إسلامية عصرية</h3>
+          <p>تقديم أدوات وتطبيقات إسلامية تجمع بين الفائدة الدينية والتصميم العصري المبتكر.</p>
         </div>
+      </div>
 
-        <div class="grid">
-            <div class="card">
-                <span class="card-icon">📿</span>
-                <h3>تطبيق التسبيح الذكي</h3>
-                <p>عداد تسبيح تفاعلي بألوان نيون هادئة مع 100 دعاء وميزة تتبع الإنجازات اليومية.</p>
-                <a href="#" class="btn-download"><i class="fas fa-download"></i> تحميل APK</a>
-            </div>
-
-            <div class="card">
-                <span class="card-icon">📅</span>
-                <h3>الرزنامة الإسلامية</h3>
-                <p>ربط عصري بين التقويم الهجري والميلادي مع إشعارات ذكية للمناسبات الإسلامية.</p>
-                <a href="#" class="btn-download" style="background: #374151; box-shadow: none;">قريباً...</a>
-            </div>
+      <div class="goal-card">
+        <div class="icon-wrapper">✨</div>
+        <div class="goal-content">
+          <h3>تحسين تجربة المستخدم الروحية</h3>
+          <p>تقديم تجربة مستخدم سلسة، خفيفة، وممتعة لمساعدة المستخدمين في عباداتهم وأذكارهم اليومية وتقريبهم من الله.</p>
         </div>
-    </div>
+      </div>
+
+      <div class="goal-card">
+        <div class="icon-wrapper">📅</div>
+        <div class="goal-content">
+          <h3>الدمج بين الأصالة والمعاصرة</h3>
+          <p>الاستفادة من التقنيات الحديثة لتنظيم العبادات والمناسبات، مثل الجمع بين التقويمين الهجري والميلادي مع تمييز الأيام الفاضلة.</p>
+        </div>
+      </div>
+
+      <div class="goal-card">
+        <div class="icon-wrapper">🚗</div>
+        <div class="goal-content">
+          <h3>ابتكار حلول مخصصة للظروف المختلفة</h3>
+          <p>تصميم تطبيقات متخصصة تناسب احتياجات معينة، مثل تطبيق رفيق السيارة المصمم لشاشات السيارات ليعمل بآمان أثناء القيادة.</p>
+        </div>
+      </div>
+
+      <div class="goal-card">
+        <div class="icon-wrapper">🎨</div>
+        <div class="goal-content">
+          <h3>توفير محتوى رقمي ذو جودة عالية</h3>
+          <p>تقديم خلفيات وأدعية وأذكار عالية الجودة ومتاحة للاستخدام والتنزيل بسهولة على مختلف الأجهزة.</p>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- قسم التواصل -->
+    <section class="contact-section">
+      <h2 class="contact-title">📬 تواصل معنا</h2>
+      <p class="contact-desc">نسعد بتواصلك معنا للاستفسارات والاقتراحات</p>
+      <a href="mailto:appnest.studio01@gmail.com" class="email-box">
+        ✉️ appnest.studio01@gmail.com
+      </a>
+    </section>
+
+    <!-- الختام (الفوتر) -->
+    <footer class="footer">
+      <p>© 2026 <strong>استوديو AppNest</strong>. جميع الحقوق محفوظة.</p>
+    </footer>
+
+  </div>
 
 </body>
 </html>
-
-```
