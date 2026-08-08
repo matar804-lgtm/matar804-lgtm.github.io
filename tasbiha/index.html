@@ -1,50 +1,71 @@
 <!DOCTYPE html>
-<html>
+<html lang="ar" dir="rtl">
 <head>
-  <!-- 
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
-  -->
-  <base href="/">
-
-  <meta charset="UTF-8">
-  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="تطبيق تسبيحة من استوديو AppNest">
-
-  <!-- iOS meta tags & icons -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="تطبيق تسبيحة">
-  <link rel="apple-touch-icon" href="icons/Icon-192.png">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png"/>
-
-  <title>تطبيق تسبيحة</title>
-  <link rel="manifest" href="manifest.json">
-  
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: #0a0e27; /* لون خلفية يتناسب مع تصميمك الليلي */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      font-family: 'Amiri', sans-serif;
-    }
-    .loading {
-      color: #D4AF37;
-      font-size: 24px;
-      font-weight: bold;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تطبيق المسبحة | Tasbiha App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Tajawal', sans-serif; 
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); 
+            color: #333; 
+            text-align: center; 
+            padding: 20px; 
+            margin: 0;
+        }
+        .container { 
+            max-width: 500px; 
+            margin: 40px auto; 
+            background: white; 
+            padding: 40px 20px; 
+            border-radius: 20px; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
+        }
+        h1 { color: #2c3e50; font-size: 28px; margin-bottom: 10px; }
+        .version { color: #7f8c8d; font-size: 16px; margin-bottom: 20px; }
+        p { font-size: 18px; line-height: 1.6; color: #555; }
+        .download-btn { 
+            display: inline-block; 
+            background-color: #27ae60; 
+            color: white; 
+            padding: 15px 40px; 
+            text-decoration: none; 
+            border-radius: 12px; 
+            font-size: 20px; 
+            font-weight: bold; 
+            margin-top: 30px; 
+            box-shadow: 0 4px 6px rgba(39, 174, 96, 0.3);
+            transition: transform 0.2s, background 0.3s;
+        }
+        .download-btn:hover { 
+            background-color: #2ecc71; 
+            transform: translateY(-2px);
+        }
+        .note {
+            margin-top: 30px; 
+            font-size: 14px; 
+            color: #95a5a6;
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 8px;
+        }
+    </style>
 </head>
 <body>
-  <div class="loading">جاري تحميل تطبيق التسبيحة...</div>
-  
-  <!-- هذا السطر هو الأهم: فهو الذي يشغل محرك Flutter -->
-  <script src="flutter_bootstrap.js" async></script>
+    <div class="container">
+        <h1>📿 تطبيق المسبحة</h1>
+        <p class="version">الإصدار 1.2.0</p>
+        
+        <p>تطبيق عملي، بسيط، وسهل الاستخدام للأذكار والتسبيح.<br>
+        تم تصميمه ليساعدك على التركيز والخشوع.</p>
+        
+        <a href="https://github.com/matar804-lgtm/matar804-lgtm.github.io/releases/download/1.2.0%2B2/Tasbiha_AppNest_Signed.apk" class="download-btn">⬇️ تحميل التطبيق (APK)</a>
+        
+        <div class="note">
+            ⚠️ للتثبيت: قد يطلب منك هاتفك السماح بتثبيت التطبيقات من "مصادر غير معروفة".<br>
+            (سيتم رفع التطبيق على Google Play قريباً بإذن الله).
+        </div>
+    </div>
 </body>
 </html>
