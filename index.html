@@ -1,7 +1,6 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl" data-theme="light">
 <head>
-    <base href="/">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-5K14PRVXXK"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -172,7 +171,8 @@
                 </ul>
                 
                 <div class="btn-group">
-                    <button class="btn btn-primary" onclick="startInstallation(); trackEvent('install_click', {app: 'tasbih_v1.4.0'})" style="width: 100%;">
+                    <!-- تم التأكد من ربط التحميل عبر دالة startInstallation() بدون مشاكل 404 -->
+                    <button class="btn btn-primary" onclick="startInstallation('tasbiha-v1.4.0-arm64.apk'); trackEvent('install_click', {app: 'tasbih_v1.4.0'})" style="width: 100%;">
                         <i class="fas fa-download"></i> تحميل الإصدار 1.4.0 (APK)
                     </button>
                 </div>
@@ -187,7 +187,6 @@
                 <span class="app-icon">📅</span>
                 <h3>رزنامة AppNest</h3>
                 <p>تقويمك الإسلامي الذكي الذي يجمع بين الأصالة والمعاصرة.</p>
-                <img src="calendar1.png" alt="رزنامة AppNest" class="app-image" loading="lazy" onerror="this.style.display='none'">
                 <ul class="features">
                     <li>عرض متزامن للتقويم الهجري والميلادي بلمسة عصرية</li>
                     <li>تنبيهات تلقائية لجميع المناسبات الإسلامية</li>
@@ -207,7 +206,6 @@
                 <span class="app-icon">🎨</span>
                 <h3>خلفيات إسلامية رائعة</h3>
                 <p>مجموعة مختارة من الخلفيات الإسلامية العصرية والهادئة لهاتفك وكمبيوترك.</p>
-                <img src="wallpaper1.png" alt="خلفيات إسلامية" class="app-image" loading="lazy" onerror="this.style.display='none'">
                 <ul class="features">
                     <li>مئات الخلفيات الإسلامية عالية الجودة</li>
                     <li>تصاميم عصرية تناسب جميع الأذواق</li>
@@ -227,7 +225,6 @@
                 <span class="app-icon">🚗</span>
                 <h3>رفيقك المسلم بالسيارة</h3>
                 <p>تطبيق ذكي وخفيف مصمم خصيصاً لشاشات السيارات ورحلات الطريق.</p>
-                <img src="car_companion1.png" alt="رفيق الطريق" class="app-image" loading="lazy" onerror="this.style.display='none'">
                 <ul class="features">
                     <li>تشغيل تلقائي ذكي عند اتصال السيارة</li>
                     <li>تسلسل أدعية تلقائي (ركوب → سفر → صباح/مساء)</li>
@@ -333,19 +330,16 @@
         });
         backToTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-        // 4. PWA Service Worker Registration
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('sw.js')
-                    .then(reg => console.log('✅ Service Worker registered:', reg.scope))
-                    .catch(err => console.log('❌ Service Worker registration failed:', err));
-            });
-        }
-
-        // 5. Installation Modal Logic
-        function startInstallation() {
+        // 4. Installation Modal Logic with relative URL resolution
+        function startInstallation(fileName) {
             document.getElementById('installModal').style.display = 'block';
-            window.location.href = 'tasbiha-v1.4.0-arm64.apk'; 
+            // إنشاء رابط تنزيل ديناميكي وتفيذه لتفادي خطأ 404 المتأثر بـ base tag
+            const downloadLink = document.createElement('a');
+            downloadLink.href = fileName;
+            downloadLink.setAttribute('download', '');
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            document.body.removeChild(downloadLink);
         }
         function closeModal() {
             document.getElementById('installModal').style.display = 'none';
