@@ -1,354 +1,633 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl" data-theme="light">
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5K14PRVXXK"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-5K14PRVXXK');
-      function trackEvent(eventName, params) { gtag('event', eventName, params); }
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AppNest — استوديو محمد مطر لتطوير تطبيقات مفيدة، عصرية وخفيفة.">
+  <meta name="theme-color" content="#0b7a68">
+  <meta property="og:title" content="AppNest | استوديو محمد مطر">
+  <meta property="og:description" content="تطبيقات مفيدة تجمع بين البساطة، الذكاء والتصميم العصري.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://matar804-lgtm.github.io/">
+  <meta property="og:image" content="https://cdn-icons-png.flaticon.com/512/2884/2884684.png">
+  <title>AppNest | استوديو محمد مطر</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/2884/2884684.png">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>استوديو AppNest | محمد مطر - تطبيقات إسلامية عصرية</title>
-    <meta name="description" content="استوديو AppNest لتطوير التطبيقات الإسلامية المفيدة. تسبيح، رزنامة، خلفيات، ورفيق الطريق الذكي للسيارة.">
-    
-    <meta name="theme-color" content="#10b981">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="استوديو AppNest">
-    <link rel="manifest" href="manifest.json">
-    <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/2884/2884684.png">
+  <style>
+    :root {
+      --primary: #0b7a68;
+      --primary-2: #10b981;
+      --primary-dark: #075749;
+      --accent: #d99a16;
+      --secondary: #7657d9;
+      --bg: #f5f8f7;
+      --surface: #ffffff;
+      --surface-2: #edf5f2;
+      --text: #14211e;
+      --muted: #647570;
+      --border: #dce8e4;
+      --nav: rgba(255,255,255,.88);
+      --shadow: 0 18px 50px rgba(17,55,48,.08);
+      --shadow-hover: 0 28px 70px rgba(11,122,104,.16);
+      --radius: 26px;
+    }
 
-    <meta property="og:title" content="استوديو AppNest | تطبيقات إسلامية عصرية">
-    <meta property="og:description" content="اكتشف تطبيقاتنا: تسبيح، رزنامة إسلامية، خلفيات، ورفيق الطريق الذكي للسيارة. تطوير محمد مطر.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://matar804-lgtm.github.io/">
-    <meta property="og:image" content="https://cdn-icons-png.flaticon.com/512/2884/2884684.png">
+    [data-theme="dark"] {
+      --primary: #34d3b2;
+      --primary-2: #10b981;
+      --primary-dark: #1ca88c;
+      --accent: #f2c14e;
+      --secondary: #a996ff;
+      --bg: #08120f;
+      --surface: #101e1a;
+      --surface-2: #142923;
+      --text: #edf8f5;
+      --muted: #a1b5af;
+      --border: #223b34;
+      --nav: rgba(8,18,15,.88);
+      --shadow: 0 18px 50px rgba(0,0,0,.25);
+      --shadow-hover: 0 28px 70px rgba(52,211,178,.12);
+    }
 
-    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/2884/2884684.png">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        :root {
-            --primary: #10b981; --primary-dark: #065f46; --accent: #f59e0b; --secondary: #8b5cf6;
-            --bg: #f8fafc; --text: #1e293b; --card-bg: #ffffff; --border-color: #e2e8f0; --nav-bg: rgba(255, 255, 255, 0.95);
-        }
-        [data-theme="dark"] {
-            --primary: #34d399; --primary-dark: #10b981; --accent: #fbbf24; --secondary: #a78bfa;
-            --bg: #0f172a; --text: #f1f5f9; --card-bg: #1e293b; --border-color: #334155; --nav-bg: rgba(15, 23, 42, 0.95);
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-        body { font-family: 'Cairo', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; transition: background 0.3s ease, color 0.3s ease; }
-        .navbar { position: sticky; top: 0; z-index: 1000; background: var(--nav-bg); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-color); padding: 15px 0; }
-        .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; }
-        .nav-logo { font-weight: 900; font-size: 1.3rem; color: var(--primary); display: flex; align-items: center; gap: 8px; }
-        .nav-links { display: flex; gap: 25px; }
-        .nav-links a { text-decoration: none; color: var(--text); font-weight: 600; transition: color 0.3s; }
-        .nav-links a:hover { color: var(--primary); }
-        .theme-toggle { background: none; border: 2px solid var(--border-color); color: var(--text); width: 40px; height: 40px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s; }
-        .theme-toggle:hover { border-color: var(--primary); color: var(--primary); transform: rotate(15deg); }
-        .header { background: linear-gradient(-45deg, var(--primary), var(--primary-dark), #059669, #047857); background-size: 400% 400%; animation: gradientBG 15s ease infinite; color: white; padding: 100px 20px 80px; text-align: center; position: relative; overflow: hidden; }
-        @keyframes gradientBG { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
-        .header::before { content: ""; position: absolute; top: -50%; right: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); animation: rotate 30s linear infinite; }
-        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-        .header h1 { margin: 0; font-size: 3rem; font-weight: 900; position: relative; z-index: 1; text-shadow: 0 4px 10px rgba(0,0,0,0.2); }
-        .header p { margin-top: 15px; font-size: 1.3rem; opacity: 0.95; position: relative; z-index: 1; }
-        .header .subtitle { font-size: 1rem; margin-top: 10px; opacity: 0.85; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 50px 20px; }
-        .about { text-align: center; max-width: 800px; margin: 0 auto 50px; background: var(--card-bg); padding: 60px 30px; border-radius: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid var(--border-color); }
-        .about h2 { color: var(--primary-dark); font-size: 2rem; margin-bottom: 15px; }
-        [data-theme="dark"] .about h2 { color: var(--primary); }
-        .about p { font-size: 1.1rem; color: #64748b; }
-        [data-theme="dark"] .about p { color: #94a3b8; }
-        .apps { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 50px; }
-        .app-card { background: var(--card-bg); border-radius: 20px; padding: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); border-top: 5px solid var(--primary); border: 1px solid var(--border-color); position: relative; overflow: hidden; }
-        .app-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(16, 185, 129, 0.15); border-color: var(--primary); }
-        .app-card:nth-child(2) { border-top-color: var(--secondary); }
-        .app-card:nth-child(2):hover { box-shadow: 0 20px 40px rgba(139, 92, 246, 0.15); border-color: var(--secondary); }
-        .app-card:nth-child(3) { border-top-color: var(--accent); }
-        .app-card:nth-child(3):hover { box-shadow: 0 20px 40px rgba(245, 158, 11, 0.15); border-color: var(--accent); }
-        .app-card:nth-child(4) { border-top-color: #ec4899; }
-        .app-card:nth-child(4):hover { box-shadow: 0 20px 40px rgba(236, 72, 153, 0.15); border-color: #ec4899; }
-        .app-card h3 { margin-top: 0; color: var(--primary-dark); font-size: 1.5rem; margin-bottom: 5px; }
-        [data-theme="dark"] .app-card h3 { color: var(--primary); }
-        .app-card > p { color: #64748b; margin-bottom: 15px; font-size: 0.95rem; }
-        [data-theme="dark"] .app-card > p { color: #94a3b8; }
-        .app-icon { font-size: 3.5rem; margin-bottom: 15px; display: block; text-align: center; }
-        .app-image { width: 100%; max-width: 280px; border-radius: 15px; margin: 15px auto 25px; display: block; box-shadow: 0 8px 25px rgba(0,0,0,0.1); transition: transform 0.4s ease; background: #e2e8f0; min-height: 200px; object-fit: cover; }
-        .app-card:hover .app-image { transform: scale(1.05) rotate(1deg); }
-        .features { list-style: none; padding: 0; margin: 20px 0; }
-        .features li { margin-bottom: 12px; padding-right: 35px; position: relative; font-size: 1rem; color: #334155; }
-        [data-theme="dark"] .features li { color: #cbd5e1; }
-        .features li::before { content: "✓"; position: absolute; right: 0; top: 2px; color: white; background: var(--primary); width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: bold; box-shadow: 0 2px 5px rgba(16, 185, 129, 0.3); }
-        .btn-group { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 25px; }
-        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 24px; border-radius: 12px; text-decoration: none; font-weight: 700; transition: all 0.3s ease; font-size: 1rem; flex: 1; min-width: 150px; cursor: pointer; border: none; }
-        .btn-primary { background: var(--primary); color: white; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3); }
-        .btn-primary:hover { background: var(--primary-dark); transform: translateY(-3px); box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4); }
-        .btn-secondary { background: transparent; border: 2px dashed var(--accent); color: var(--accent); cursor: default; }
-        .btn-secondary:hover { background: rgba(245, 158, 11, 0.1); }
-        .app-card.coming-soon { border-top-color: var(--accent); }
-        .coming-soon-badge { background: var(--accent); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.9rem; font-weight: bold; margin-bottom: 15px; display: inline-block; }
-        .contact-section { background: var(--card-bg); border-radius: 25px; padding: 50px 30px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-bottom: 40px; border: 1px solid var(--border-color); }
-        .contact-section h2 { color: var(--primary-dark); font-size: 1.8rem; margin-bottom: 10px; }
-        [data-theme="dark"] .contact-section h2 { color: var(--primary); }
-        .contact-section p { color: #64748b; margin-bottom: 30px; }
-        [data-theme="dark"] .contact-section p { color: #94a3b8; }
-        .social-links { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
-        .social-link { display: inline-flex; align-items: center; justify-content: center; width: 55px; height: 55px; border-radius: 50%; color: white; font-size: 1.4rem; text-decoration: none; transition: all 0.3s ease; }
-        .social-link:hover { transform: translateY(-8px) scale(1.1); box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
-        .social-link.email { background: #EA4335; }
-        .footer { text-align: center; padding: 40px 20px; color: #64748b; font-size: 0.95rem; border-top: 2px solid var(--border-color); background: var(--card-bg); }
-        .footer strong { color: var(--primary-dark); }
-        [data-theme="dark"] .footer strong { color: var(--primary); }
-        .back-to-top { position: fixed; bottom: 30px; left: 30px; width: 50px; height: 50px; background: var(--primary); color: white; border: none; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4); opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 999; }
-        .back-to-top.visible { opacity: 1; visibility: visible; }
-        .back-to-top:hover { background: var(--primary-dark); transform: translateY(-5px); }
-        .fade-in-up { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
-        .fade-in-up.visible { opacity: 1; transform: translateY(0); }
-        
-        .install-modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); animation: fadeIn 0.3s; }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        .install-modal-content { background: var(--card-bg); margin: 15% auto; padding: 35px; border-radius: 25px; max-width: 450px; text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,0.3); animation: slideDown 0.3s; border: 1px solid var(--border-color); }
-        @keyframes slideDown { from { transform: translateY(-50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-        .install-modal-content h3 { color: var(--primary); font-size: 1.6em; margin-bottom: 15px; }
-        .install-modal-content ol { text-align: right; line-height: 1.9; margin: 15px 0; color: var(--text); padding-right: 20px; }
-        .modal-close-btn { background: var(--primary); color: white; padding: 12px 35px; border-radius: 12px; border: none; cursor: pointer; font-size: 1rem; font-weight: bold; margin-top: 15px; transition: background 0.3s; }
-        .modal-close-btn:hover { background: var(--primary-dark); }
+    * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
+    html { scroll-padding-top: 90px; }
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+      transition: background .3s ease, color .3s ease;
+    }
+    a { color: inherit; }
+    button, input, textarea, select { font: inherit; }
+    button { cursor: pointer; }
 
-        @media (max-width: 600px) {
-            .header h1 { font-size: 2rem; } .header p { font-size: 1.1rem; } .about h2 { font-size: 1.5rem; } .about { padding: 40px 20px; } .btn { width: 100%; } .nav-links { display: none; }
-        }
-    </style>
+    .navbar {
+      position: sticky; top: 0; z-index: 1000;
+      background: var(--nav);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-container {
+      max-width: 1180px; margin: auto; padding: 14px 20px;
+      display: flex; align-items: center; justify-content: space-between; gap: 20px;
+    }
+    .brand {
+      display: flex; align-items: center; gap: 10px;
+      text-decoration: none; font-weight: 900; font-size: 1.25rem;
+      color: var(--primary);
+    }
+    .brand-mark {
+      width: 40px; height: 40px; border-radius: 13px;
+      display: grid; place-items: center; color: white;
+      background: linear-gradient(135deg, var(--primary), var(--primary-2));
+      box-shadow: 0 8px 22px rgba(16,185,129,.22);
+    }
+    .nav-links { display: flex; gap: 26px; align-items: center; }
+    .nav-links a { text-decoration: none; color: var(--muted); font-weight: 700; transition: color .2s; }
+    .nav-links a:hover { color: var(--primary); }
+    .theme-toggle {
+      width: 42px; height: 42px; border-radius: 50%;
+      border: 1px solid var(--border); background: var(--surface);
+      color: var(--text); display: grid; place-items: center;
+      transition: .25s;
+    }
+    .theme-toggle:hover { color: var(--primary); transform: rotate(12deg); }
+
+    .hero {
+      position: relative; overflow: hidden; color: white;
+      padding: 105px 20px 90px;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(255,255,255,.13), transparent 30%),
+        radial-gradient(circle at 85% 80%, rgba(255,255,255,.09), transparent 30%),
+        linear-gradient(135deg, #075749, #0b7a68 45%, #10a67d);
+    }
+    .hero::before, .hero::after {
+      content: ""; position: absolute; border: 1px solid rgba(255,255,255,.08);
+      border-radius: 50%; pointer-events: none;
+    }
+    .hero::before { width: 520px; height: 520px; left: -230px; top: -220px; }
+    .hero::after { width: 420px; height: 420px; right: -170px; bottom: -210px; }
+    .hero-inner { max-width: 900px; margin: auto; text-align: center; position: relative; z-index: 1; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 7px 15px; border-radius: 999px;
+      background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2);
+      font-weight: 700; font-size: .9rem; margin-bottom: 20px;
+      backdrop-filter: blur(8px);
+    }
+    .hero h1 { font-size: clamp(2.4rem, 6vw, 4.6rem); line-height: 1.15; font-weight: 900; }
+    .hero h1 span { color: #d7fff4; }
+    .hero p { max-width: 720px; margin: 20px auto 0; font-size: 1.2rem; opacity: .94; }
+    .hero-sub { font-size: .98rem !important; opacity: .76 !important; margin-top: 10px !important; }
+    .hero-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+    .hero-btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+      min-width: 190px; padding: 13px 22px; border-radius: 14px;
+      text-decoration: none; font-weight: 800; transition: .25s;
+    }
+    .hero-btn.primary { background: white; color: var(--primary-dark); }
+    .hero-btn.secondary { border: 1px solid rgba(255,255,255,.35); color: white; background: rgba(255,255,255,.08); }
+    .hero-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0,0,0,.16); }
+
+    .container { max-width: 1180px; margin: auto; padding: 75px 20px; }
+    .section-head { text-align: center; max-width: 760px; margin: 0 auto 40px; }
+    .eyebrow { color: var(--primary); font-weight: 900; font-size: .9rem; margin-bottom: 7px; }
+    .section-head h2 { font-size: clamp(1.8rem, 4vw, 2.7rem); line-height: 1.25; margin-bottom: 10px; }
+    .section-head p { color: var(--muted); }
+
+    .features-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px;
+    }
+    .feature {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 20px; padding: 25px 20px; text-align: center;
+      box-shadow: var(--shadow); transition: .3s;
+    }
+    .feature:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); }
+    .feature-icon {
+      width: 56px; height: 56px; margin: 0 auto 14px; border-radius: 17px;
+      display: grid; place-items: center; color: var(--primary);
+      background: var(--surface-2); font-size: 1.35rem;
+    }
+    .feature h3 { font-size: 1.05rem; margin-bottom: 5px; }
+    .feature p { color: var(--muted); font-size: .9rem; }
+
+    .apps {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+    }
+    .app-card {
+      position: relative; overflow: hidden;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 30px;
+      box-shadow: var(--shadow); transition: .35s;
+    }
+    .app-card:hover { transform: translateY(-7px); box-shadow: var(--shadow-hover); }
+    .app-card.available { grid-column: 1 / -1; }
+    .app-top { display: flex; align-items: center; justify-content: space-between; gap: 15px; }
+    .app-icon {
+      width: 66px; height: 66px; border-radius: 19px;
+      display: grid; place-items: center; font-size: 2rem;
+      background: var(--surface-2); flex: 0 0 auto;
+    }
+    .badge {
+      padding: 5px 12px; border-radius: 999px; font-size: .8rem; font-weight: 800;
+    }
+    .badge-live { background: rgba(16,185,129,.13); color: var(--primary); }
+    .badge-soon { background: rgba(217,154,22,.14); color: var(--accent); }
+    .app-content h3 { font-size: 1.5rem; margin-top: 17px; }
+    .app-content .desc { color: var(--muted); margin: 5px 0 18px; }
+    .app-list { list-style: none; display: grid; grid-template-columns: repeat(2, 1fr); gap: 9px 18px; }
+    .app-list li { color: var(--muted); font-size: .92rem; }
+    .app-list li::before { content: "✓"; color: var(--primary); font-weight: 900; margin-left: 7px; }
+    .app-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      border: 0; border-radius: 12px; padding: 11px 18px; text-decoration: none;
+      font-weight: 800; transition: .25s;
+    }
+    .btn-primary { color: white; background: linear-gradient(135deg, var(--primary), var(--primary-2)); }
+    .btn-primary:hover { transform: translateY(-2px); filter: brightness(1.04); }
+    .btn-disabled { color: var(--muted); background: var(--surface-2); cursor: not-allowed; }
+
+    .about-panel {
+      background: linear-gradient(135deg, var(--surface), var(--surface-2));
+      border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 42px; box-shadow: var(--shadow);
+      display: grid; grid-template-columns: 1.3fr .7fr; gap: 35px; align-items: center;
+    }
+    .about-panel h2 { font-size: 2rem; margin-bottom: 12px; }
+    .about-panel p { color: var(--muted); }
+    .about-points { display: grid; gap: 12px; }
+    .about-point {
+      display: flex; align-items: center; gap: 12px; padding: 13px 15px;
+      background: var(--surface); border: 1px solid var(--border); border-radius: 15px;
+      font-weight: 700;
+    }
+    .about-point i { color: var(--primary); width: 22px; text-align: center; }
+
+    .contact {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 45px; box-shadow: var(--shadow);
+    }
+    .contact-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 40px; }
+    .contact-info h2 { font-size: 2rem; margin-bottom: 10px; }
+    .contact-info p { color: var(--muted); margin-bottom: 20px; }
+    .contact-email {
+      display: inline-flex; align-items: center; gap: 9px; color: var(--primary);
+      text-decoration: none; font-weight: 800; word-break: break-word;
+    }
+    form { display: grid; gap: 14px; }
+    label { font-weight: 700; font-size: .9rem; display: block; margin-bottom: 5px; }
+    input, textarea, select {
+      width: 100%; border: 1px solid var(--border); border-radius: 12px;
+      padding: 12px 14px; background: var(--bg); color: var(--text);
+      outline: none; transition: border-color .2s, box-shadow .2s;
+    }
+    input:focus, textarea:focus, select:focus {
+      border-color: var(--primary); box-shadow: 0 0 0 3px rgba(16,185,129,.12);
+    }
+    textarea { min-height: 125px; resize: vertical; }
+
+    .footer {
+      border-top: 1px solid var(--border); background: var(--surface);
+      padding: 32px 20px; text-align: center; color: var(--muted);
+    }
+    .footer strong { color: var(--primary); }
+    .footer-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 18px; margin: 10px 0; }
+    .footer-links a { text-decoration: none; font-weight: 700; }
+    .footer-links a:hover { color: var(--primary); }
+
+    .back-top {
+      position: fixed; left: 25px; bottom: 25px; z-index: 900;
+      width: 48px; height: 48px; border: 0; border-radius: 50%;
+      background: var(--primary); color: white; display: grid; place-items: center;
+      box-shadow: 0 8px 25px rgba(0,0,0,.18);
+      opacity: 0; visibility: hidden; transform: translateY(10px); transition: .25s;
+    }
+    .back-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
+
+    .modal {
+      display: none; position: fixed; inset: 0; z-index: 2000;
+      background: rgba(0,0,0,.7); padding: 20px;
+    }
+    .modal.open { display: grid; place-items: center; }
+    .modal-card {
+      width: min(460px, 100%); background: var(--surface); color: var(--text);
+      border: 1px solid var(--border); border-radius: 24px; padding: 32px;
+      box-shadow: 0 25px 80px rgba(0,0,0,.3); text-align: center;
+    }
+    .modal-icon {
+      width: 65px; height: 65px; border-radius: 20px; margin: 0 auto 15px;
+      display: grid; place-items: center; background: var(--surface-2);
+      color: var(--primary); font-size: 1.5rem;
+    }
+    .modal-card h3 { margin-bottom: 7px; }
+    .modal-card p { color: var(--muted); }
+    .modal-card ol { text-align: right; margin: 18px 0; padding-right: 24px; color: var(--muted); }
+    .modal-close { margin-top: 5px; }
+
+    .fade { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+    .fade.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 900px) {
+      .features-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-panel, .contact-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 700px) {
+      .nav-links { display: none; }
+      .hero { padding: 75px 18px 65px; }
+      .container { padding: 55px 16px; }
+      .apps { grid-template-columns: 1fr; }
+      .app-card.available { grid-column: auto; }
+      .app-list { grid-template-columns: 1fr; }
+      .contact { padding: 28px 20px; }
+      .about-panel { padding: 28px 22px; }
+    }
+    @media (max-width: 480px) {
+      .features-grid { grid-template-columns: 1fr; }
+      .hero-actions, .app-actions { flex-direction: column; }
+      .hero-btn, .app-actions .btn { width: 100%; }
+      .app-card { padding: 23px; }
+    }
+  </style>
 </head>
+
 <body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a class="brand" href="#">
+        <span class="brand-mark"><i class="fas fa-layer-group"></i></span>
+        <span>AppNest</span>
+      </a>
 
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo"><i class="fas fa-cube"></i> استوديو AppNest</div>
-            <div class="nav-links">
-                <a href="#about">عن الاستوديو</a>
-                <a href="#apps">التطبيقات</a>
-                <a href="#contact">تواصل معنا</a>
-            </div>
-            <button class="theme-toggle" id="theme-toggle" title="تبديل الوضع الليلي"><i class="fas fa-moon"></i></button>
-        </div>
-    </nav>
+      <div class="nav-links">
+        <a href="#about">عن الاستوديو</a>
+        <a href="#apps">التطبيقات</a>
+        <a href="#contact">تواصل معنا</a>
+      </div>
 
-    <div class="header">
-        <h1>🚀 استوديو AppNest</h1>
-        <p>تطبيقات إسلامية مفيدة بتصميم عصري وتجربة مستخدم استثنائية</p>
-        <p class="subtitle">تطوير: محمد مطر</p>
+      <button class="theme-toggle" id="themeToggle" aria-label="تبديل الوضع الليلي" title="تبديل الوضع الليلي">
+        <i class="fas fa-moon"></i>
+      </button>
     </div>
-    
-    <div class="container">
-        <div id="about" class="about fade-in-up">
-            <h2>✨ مرحباً بك في استوديو AppNest</h2>
-            <p>نطور تطبيقات إسلامية تجمع بين الفائدة والتصميم العصري، لمساعدتك في عبادتك اليومية وتقريبك من الله بتجربة مستخدم سلسة، خفيفة، وممتعة.</p>
-        </div>
-        
-        <div id="apps" class="apps">
-            
-            <!-- تطبيق التسبيح (الإصدار 1.4.0) -->
-            <div class="app-card fade-in-up">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-                    <span class="app-icon" style="margin: 0;">📿</span>
-                    <span style="background: var(--accent); color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);">جديد v1.4.0</span>
-                </div>
-                <h3>تطبيق التسبيح</h3>
-                <p>تطبيق عملي، بسيط، وسهل الاستخدام للأذكار والتسبيح. صُمم ليساعدك على التركيز والخشوع في ذكرك لله.</p>
-                
-                <ul class="features">
-                    <li>عداد تسبيح ذكي مع استجابة لمسية سلسة وإحصائيات دقيقة</li>
-                    <li>نظام إنجازات متطور: اجمع الأحجار الكريمة (الياقوت، الزمرد، المرجان)</li>
-                    <li>دعم محسّن للوضع الليلي بألوان مريحة للعين</li>
-                    <li>تحديثات تلقائية داخل التطبيق لضمان حصولك على أحدث الميزات</li>
-                    <li>مكتبة شاملة: أذكار الصباح والمساء، و 100 دعاء مأثور</li>
-                    <li>بوصلة قبلة تفاعلية ودقيقة، وخلفيات إسلامية هادئة</li>
-                </ul>
-                
-                <div class="btn-group">
-                    <!-- تم التأكد من ربط التحميل عبر دالة startInstallation() بدون مشاكل 404 -->
-                    <button class="btn btn-primary" onclick="startInstallation('tasbiha-v1.4.0-arm64.apk'); trackEvent('install_click', {app: 'tasbih_v1.4.0'})" style="width: 100%;">
-                        <i class="fas fa-download"></i> تحميل الإصدار 1.4.0 (APK)
-                    </button>
-                </div>
-                <p style="font-size: 0.8rem; color: #ef4444; margin-top: 10px; text-align: center; font-weight: 600;">
-                    <i class="fas fa-exclamation-triangle"></i> قد يطلب هاتفك السماح بالتثبيت من مصادر غير معروفة
-                </p>
-            </div>
+  </nav>
 
-            <!-- التطبيقات الأخرى (قيد التطوير) -->
-            <div class="app-card coming-soon fade-in-up">
-                <span class="coming-soon-badge">قريباً</span>
-                <span class="app-icon">📅</span>
-                <h3>رزنامة AppNest</h3>
-                <p>تقويمك الإسلامي الذكي الذي يجمع بين الأصالة والمعاصرة.</p>
-                <ul class="features">
-                    <li>عرض متزامن للتقويم الهجري والميلادي بلمسة عصرية</li>
-                    <li>تنبيهات تلقائية لجميع المناسبات الإسلامية</li>
-                    <li>تمييز الأشهر الحرم والأيام الفاضلة بصرياً</li>
-                    <li>واجهة هادئة وأنيقة تدعم الوضع الليلي</li>
-                    <li>إضافة ملاحظاتك الشخصية وربطها بالمناسبات</li>
-                </ul>
-                <div class="btn-group" style="justify-content: center;">
-                    <a href="#" class="btn btn-secondary" style="cursor: default;">
-                        <i class="fas fa-tools"></i> قيد التطوير
-                    </a>
-                </div>
-            </div>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="hero-badge"><i class="fas fa-sparkles"></i> استوديو محمد مطر</div>
+      <h1>نصنع تطبيقات <span>مفيدة</span> للحياة اليومية</h1>
+      <p>تطبيقات تجمع بين البساطة، الذكاء، الأداء والتصميم العصري — لتجربة واضحة ومريحة على هاتفك.</p>
+      <p class="hero-sub">من الأدوات الإسلامية اليومية إلى حلول ذكية لإدارة السيارة والحياة اليومية.</p>
 
-            <div class="app-card coming-soon fade-in-up">
-                <span class="coming-soon-badge">قريباً</span>
-                <span class="app-icon">🎨</span>
-                <h3>خلفيات إسلامية رائعة</h3>
-                <p>مجموعة مختارة من الخلفيات الإسلامية العصرية والهادئة لهاتفك وكمبيوترك.</p>
-                <ul class="features">
-                    <li>مئات الخلفيات الإسلامية عالية الجودة</li>
-                    <li>تصاميم عصرية تناسب جميع الأذواق</li>
-                    <li>متاحة للهاتف والكمبيوتر</li>
-                    <li>تصنيفات متنوعة: آيات، أدعية، مساجد، طبيعة</li>
-                    <li>إمكانية التحميل والمشاركة بسهولة</li>
-                </ul>
-                <div class="btn-group" style="justify-content: center;">
-                    <a href="#" class="btn btn-secondary" style="cursor: default;">
-                        <i class="fas fa-tools"></i> قيد التطوير
-                    </a>
-                </div>
-            </div>
-
-            <div class="app-card coming-soon fade-in-up">
-                <span class="coming-soon-badge">قريباً</span>
-                <span class="app-icon">🚗</span>
-                <h3>رفيقك المسلم بالسيارة</h3>
-                <p>تطبيق ذكي وخفيف مصمم خصيصاً لشاشات السيارات ورحلات الطريق.</p>
-                <ul class="features">
-                    <li>تشغيل تلقائي ذكي عند اتصال السيارة</li>
-                    <li>تسلسل أدعية تلقائي (ركوب → سفر → صباح/مساء)</li>
-                    <li>استراتيجية Freemium Offline</li>
-                    <li>وضع التركيز أثناء القيادة السريعة</li>
-                    <li>استهلاك منخفض للذاكرة والبطارية</li>
-                    <li>إحصائيات أسبوعية للإنجازات الروحية</li>
-                </ul>
-                <div class="btn-group" style="justify-content: center;">
-                    <a href="#" class="btn btn-secondary" style="cursor: default;">
-                        <i class="fas fa-tools"></i> قيد التطوير
-                    </a>
-                </div>
-            </div>
-
-        </div>
-        
-        <div id="contact" class="contact-section fade-in-up">
-            <h2>📬 تواصل معنا</h2>
-            <p>نسعد بتواصلك معنا للاستفسارات والاقتراحات</p>
-            
-            <form action="https://formspree.io/f/mrenaaoy" method="POST" style="max-width: 500px; margin: 0 auto; text-align: right;" onsubmit="trackEvent('form_submit', {category: 'contact'})">
-                <div style="margin-bottom: 15px;">
-                    <label style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--text);">الاسم:</label>
-                    <input type="text" name="name" required style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 10px; background: var(--bg); color: var(--text); font-family: 'Cairo', sans-serif; font-size: 1rem; transition: border-color 0.3s;" onfocus="this.style.borderColor='var(--primary)'" onblur="this.style.borderColor='var(--border-color)'">
-                </div>
-                <div style="margin-bottom: 15px;">
-                    <label style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--text);">بريدك الإلكتروني:</label>
-                    <input type="email" name="email" required style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 10px; background: var(--bg); color: var(--text); font-family: 'Cairo', sans-serif; font-size: 1rem; transition: border-color 0.3s;" onfocus="this.style.borderColor='var(--primary)'" onblur="this.style.borderColor='var(--border-color)'">
-                </div>
-                <div style="margin-bottom: 20px;">
-                    <label style="display: block; margin-bottom: 8px; font-weight: 600; color: var(--text);">الرسالة:</label>
-                    <textarea name="message" rows="4" required style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 10px; background: var(--bg); color: var(--text); font-family: 'Cairo', sans-serif; font-size: 1rem; resize: vertical; transition: border-color 0.3s;" onfocus="this.style.borderColor='var(--primary)'" onblur="this.style.borderColor='var(--border-color)'"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%; font-family: 'Cairo', sans-serif;">
-                    <i class="fas fa-paper-plane"></i> إرسال الرسالة
-                </button>
-            </form>
-
-            <div style="margin-top: 30px; border-top: 1px solid var(--border-color); padding-top: 20px;">
-                <p style="font-size: 0.9rem; margin-bottom: 10px; color: var(--text);">أو راسلنا مباشرة عبر:</p>
-                <a href="mailto:appnest.studio01@gmail.com" class="social-link email" title="البريد الإلكتروني" style="display: inline-flex;" onclick="trackEvent('email_click', {category: 'contact'})">
-                    <i class="fas fa-envelope"></i>
-                </a>
-            </div>
-        </div>
+      <div class="hero-actions">
+        <a class="hero-btn primary" href="#apps"><i class="fas fa-grid-2"></i> استكشف تطبيقاتنا</a>
+        <a class="hero-btn secondary" href="#contact"><i class="fas fa-paper-plane"></i> تواصل معنا</a>
+      </div>
     </div>
-    
-    <div class="footer">
-        <p>© 2026 <strong>استوديو AppNest</strong>. جميع الحقوق محفوظة.</p>
-        <p>📧 appnest.studio01@gmail.com</p>
-    </div>
+  </header>
 
-    <button class="back-to-top" id="backToTop" title="العودة للأعلى">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+  <main>
+    <section class="container fade" id="about">
+      <div class="section-head">
+        <div class="eyebrow">فلسفتنا</div>
+        <h2>البساطة أولاً، والفائدة دائماً</h2>
+        <p>نركز على بناء تطبيقات خفيفة وسهلة الاستخدام، مع اهتمام حقيقي بالتفاصيل وتجربة المستخدم.</p>
+      </div>
 
-    <!-- نافذة تعليمات التثبيت -->
-    <div id="installModal" class="install-modal">
-        <div class="install-modal-content">
-            <h3>📥 جاري تحميل التطبيق...</h3>
-            <p style="color: var(--text); margin: 15px 0; opacity: 0.8;">بعد اكتمال التحميل، اتبع هذه الخطوات:</p>
-            <ol>
-                <li>افتح الملف المُحمّل من مجلد التنزيلات في هاتفك.</li>
-                <li>إذا ظهر تحذير "مصدر غير معروف"، اضغط على <strong>"الإعدادات"</strong> وفعّل <strong>"السماح من هذا المصدر"</strong>.</li>
-                <li>اضغط <strong>"تثبيت"</strong> وانتظر حتى يكتمل.</li>
-                <li>افتح التطبيق واستمتع!</li>
-            </ol>
-            <button class="modal-close-btn" onclick="closeModal()">حسناً، فهمت</button>
+      <div class="features-grid">
+        <div class="feature">
+          <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+          <h3>سريعة وخفيفة</h3>
+          <p>أداء عملي واستهلاك مدروس للموارد.</p>
         </div>
+        <div class="feature">
+          <div class="feature-icon"><i class="fas fa-shield-halved"></i></div>
+          <h3>خصوصية واحترام</h3>
+          <p>نصمم التجربة مع مراعاة بيانات المستخدم.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon"><i class="fas fa-wand-magic-sparkles"></i></div>
+          <h3>تصميم عصري</h3>
+          <p>واجهات واضحة، جميلة ومريحة للعين.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon"><i class="fas fa-wifi-slash"></i></div>
+          <h3>عملية وموثوقة</h3>
+          <p>نعطي الأولوية للميزات التي يحتاجها المستخدم فعلاً.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="container fade" id="apps">
+      <div class="section-head">
+        <div class="eyebrow">منتجاتنا</div>
+        <h2>تطبيقات AppNest</h2>
+        <p>منتجات متاحة الآن، ومشاريع نعمل عليها لتقديم تجربة أفضل في المستقبل.</p>
+      </div>
+
+      <div class="apps">
+        <article class="app-card available">
+          <div class="app-top">
+            <div class="app-icon">📿</div>
+            <span class="badge badge-live"><i class="fas fa-circle-check"></i> متاح الآن · v1.5.1</span>
+          </div>
+
+          <div class="app-content">
+            <h3>متر تسبيحة</h3>
+            <p class="desc">تطبيق عملي للتسبيح والأذكار، مع أدوات إسلامية يومية وتصميم هادئ وسهل الاستخدام.</p>
+
+            <ul class="app-list">
+              <li>عداد تسبيح واستجابة لمسية</li>
+              <li>إحصائيات وإنجازات</li>
+              <li>أذكار الصباح والمساء</li>
+              <li>مكتبة أدعية مأثورة</li>
+              <li>مواقيت الصلاة والتنبيهات</li>
+              <li>بوصلة قبلة تفاعلية</li>
+            </ul>
+
+            <div class="app-actions">
+              <button class="btn btn-primary" onclick="startInstallation('tasbiha-v1.5.1-arm64.apk')">
+                <i class="fas fa-download"></i> تحميل APK
+              </button>
+              <a class="btn btn-disabled" href="#contact">
+                <i class="fas fa-comment-dots"></i> إرسال اقتراح
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="app-card fade">
+          <div class="app-top">
+            <div class="app-icon">📅</div>
+            <span class="badge badge-soon">قريباً</span>
+          </div>
+          <div class="app-content">
+            <h3>رزنامة AppNest</h3>
+            <p class="desc">تقويم إسلامي ذكي يجمع بين التاريخ الهجري والميلادي وتجربة عصرية.</p>
+            <ul class="app-list">
+              <li>هجري وميلادي</li>
+              <li>مناسبات إسلامية</li>
+              <li>الأيام الفاضلة</li>
+              <li>ملاحظات شخصية</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="app-card fade">
+          <div class="app-top">
+            <div class="app-icon">🎨</div>
+            <span class="badge badge-soon">قريباً</span>
+          </div>
+          <div class="app-content">
+            <h3>خلفيات إسلامية</h3>
+            <p class="desc">خلفيات هادئة وعصرية للهاتف والكمبيوتر، مصممة للاستخدام اليومي.</p>
+            <ul class="app-list">
+              <li>جودة عالية</li>
+              <li>آيات وأدعية</li>
+              <li>مساجد وطبيعة</li>
+              <li>تحميل ومشاركة</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="app-card fade">
+          <div class="app-top">
+            <div class="app-icon">🚗</div>
+            <span class="badge badge-soon">قريباً</span>
+          </div>
+          <div class="app-content">
+            <h3>سيارتي · Sayyarti</h3>
+            <p class="desc">رفيقك الذكي لإدارة سيارتك ومتابعة الوقود والصيانة والمصاريف والتنبيهات.</p>
+            <ul class="app-list">
+              <li>إدارة عدة سيارات</li>
+              <li>الوقود والمصاريف</li>
+              <li>الصيانة وتغيير الزيت</li>
+              <li>العداد والتنبيهات</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="container fade">
+      <div class="about-panel">
+        <div>
+          <div class="eyebrow">عن AppNest</div>
+          <h2>نبني أدوات صغيرة، لكن فائدتها كبيرة.</h2>
+          <p>
+            AppNest هو استوديو مستقل يركز على تطوير تطبيقات عملية تجمع بين الفكرة الواضحة
+            والتنفيذ الخفيف والتصميم العصري. هدفنا أن يكون كل تطبيق مفيداً وسهل الفهم منذ أول استخدام.
+          </p>
+        </div>
+        <div class="about-points">
+          <div class="about-point"><i class="fas fa-check"></i> تجربة عربية واضحة</div>
+          <div class="about-point"><i class="fas fa-check"></i> اهتمام بالتفاصيل</div>
+          <div class="about-point"><i class="fas fa-check"></i> تطوير مستمر</div>
+          <div class="about-point"><i class="fas fa-check"></i> تطبيقات عملية</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container fade" id="contact">
+      <div class="contact">
+        <div class="contact-grid">
+          <div class="contact-info">
+            <div class="eyebrow">ابقَ على تواصل</div>
+            <h2>هل لديك اقتراح؟</h2>
+            <p>يسعدنا سماع رأيك، استقبال اقتراحاتك أو معرفة أي مشكلة واجهتك في أحد تطبيقاتنا.</p>
+            <a class="contact-email" href="mailto:appnest.studio01@gmail.com">
+              <i class="fas fa-envelope"></i> appnest.studio01@gmail.com
+            </a>
+          </div>
+
+          <form action="https://formspree.io/f/mrenaaoy" method="POST" onsubmit="trackEvent('form_submit', {category:'contact'});">
+            <div>
+              <label for="name">الاسم</label>
+              <input id="name" type="text" name="name" autocomplete="name" required>
+            </div>
+            <div>
+              <label for="email">البريد الإلكتروني</label>
+              <input id="email" type="email" name="email" autocomplete="email" required>
+            </div>
+            <div>
+              <label for="type">نوع الرسالة</label>
+              <select id="type" name="type">
+                <option value="suggestion">اقتراح</option>
+                <option value="problem">مشكلة</option>
+                <option value="cooperation">تعاون</option>
+                <option value="question">استفسار</option>
+              </select>
+            </div>
+            <div>
+              <label for="message">الرسالة</label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit">
+              <i class="fas fa-paper-plane"></i> إرسال الرسالة
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p><strong>AppNest</strong> · استوديو محمد مطر</p>
+    <div class="footer-links">
+      <a href="#about">عن الاستوديو</a>
+      <a href="#apps">التطبيقات</a>
+      <a href="#contact">تواصل معنا</a>
+      <a href="mailto:appnest.studio01@gmail.com">البريد الإلكتروني</a>
     </div>
+    <p>© 2026 AppNest. جميع الحقوق محفوظة.</p>
+  </footer>
 
-    <script>
-        // 1. Dark Mode Logic
-        const themeToggle = document.getElementById('theme-toggle');
-        const htmlElement = document.documentElement;
-        const icon = themeToggle.querySelector('i');
-        const savedTheme = localStorage.getItem('theme') || 'light';
-        htmlElement.setAttribute('data-theme', savedTheme);
-        function updateIcon(theme) {
-            if (theme === 'dark') { icon.classList.remove('fa-moon'); icon.classList.add('fa-sun'); } 
-            else { icon.classList.remove('fa-sun'); icon.classList.add('fa-moon'); }
-        }
-        updateIcon(savedTheme);
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = htmlElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            htmlElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            updateIcon(newTheme);
-        });
+  <button class="back-top" id="backTop" aria-label="العودة للأعلى" title="العودة للأعلى">
+    <i class="fas fa-arrow-up"></i>
+  </button>
 
-        // 2. Scroll Animation Logic
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-        document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+  <div class="modal" id="installModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <div class="modal-icon"><i class="fas fa-download"></i></div>
+      <h3 id="modalTitle">جاري بدء تحميل التطبيق</h3>
+      <p>بعد اكتمال التحميل، يمكنك فتح ملف APK وتثبيته على هاتفك.</p>
+      <ol>
+        <li>افتح ملف APK من مجلد التنزيلات.</li>
+        <li>إذا طلب الهاتف السماح بالمصدر، فعّل السماح لهذا المتصفح.</li>
+        <li>اضغط «تثبيت» وانتظر اكتمال العملية.</li>
+      </ol>
+      <button class="btn btn-primary modal-close" onclick="closeModal()">حسناً، فهمت</button>
+    </div>
+  </div>
 
-        // 3. Back to Top Logic
-        const backToTopBtn = document.getElementById('backToTop');
-        window.addEventListener('scroll', () => {
-            backToTopBtn.classList.toggle('visible', window.scrollY > 300);
-        });
-        backToTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  <script>
+    // Google Analytics
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    function trackEvent(eventName, params) {
+      if (typeof window.gtag === 'function') window.gtag('event', eventName, params || {});
+    }
 
-        // 4. Installation Modal Logic with relative URL resolution
-        function startInstallation(fileName) {
-            document.getElementById('installModal').style.display = 'block';
-            // إنشاء رابط تنزيل ديناميكي وتفيذه لتفادي خطأ 404 المتأثر بـ base tag
-            const downloadLink = document.createElement('a');
-            downloadLink.href = fileName;
-            downloadLink.setAttribute('download', '');
-            document.body.appendChild(downloadLink);
-            downloadLink.click();
-            document.body.removeChild(downloadLink);
+    const html = document.documentElement;
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = themeToggle.querySelector('i');
+
+    function setTheme(theme) {
+      html.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+      themeIcon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+    }
+
+    const savedTheme = localStorage.getItem('theme');
+    const preferredTheme = savedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    setTheme(preferredTheme);
+
+    themeToggle.addEventListener('click', () => {
+      const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      setTheme(next);
+      trackEvent('theme_change', {theme: next});
+    });
+
+    // Scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
         }
-        function closeModal() {
-            document.getElementById('installModal').style.display = 'none';
-        }
-        window.onclick = function(event) {
-            if (event.target == document.getElementById('installModal')) {
-                closeModal();
-            }
-        }
-    </script>
+      });
+    }, {threshold: 0.08});
+
+    document.querySelectorAll('.fade').forEach(el => observer.observe(el));
+
+    // Back to top
+    const backTop = document.getElementById('backTop');
+    window.addEventListener('scroll', () => {
+      backTop.classList.toggle('visible', window.scrollY > 350);
+    }, {passive: true});
+
+    backTop.addEventListener('click', () => {
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    });
+
+    // APK installation/download
+    const modal = document.getElementById('installModal');
+
+    function startInstallation(fileName) {
+      modal.classList.add('open');
+      trackEvent('install_click', {app: 'tasbiha', version: '1.5.1'});
+
+      const link = document.createElement('a');
+      link.href = fileName;
+      link.setAttribute('download', '');
+      link.rel = 'noopener';
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+    }
+
+    function closeModal() {
+      modal.classList.remove('open');
+    }
+
+    modal.addEventListener('click', (event) => {
+      if (event.target === modal) closeModal();
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') closeModal();
+    });
+  </script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5K14PRVXXK"></script>
+  <script>
+    gtag('js', new Date());
+    gtag('config', 'G-5K14PRVXXK');
+  </script>
 </body>
 </html>
